@@ -378,6 +378,55 @@ function initMain() {
     });
   });
 
+  // Auto-accordion gallery (mobile)
+  const accordion = document.querySelector('.gallery-auto-accordion');
+  if (accordion) {
+    const panels = accordion.querySelectorAll('.accordion-panel');
+    let current = 0;
+    let accordionTimer;
+
+    function activateAccordion(index) {
+      panels.forEach((p, i) => {
+        const content = p.querySelector('.accordion-content');
+        p.classList.toggle('active', i === index);
+        if (content) {
+          content.style.maxHeight = i === index ? content.scrollHeight + 'px' : '0';
+        }
+      });
+      current = index;
+    }
+
+    function nextAccordion() {
+      if (panels.length) activateAccordion((current + 1) % panels.length);
+    }
+
+    function startAccordionAuto() {
+      stopAccordionAuto();
+      accordionTimer = setInterval(nextAccordion, 3500);
+    }
+
+    function stopAccordionAuto() {
+      clearInterval(accordionTimer);
+    }
+
+    panels.forEach((panel) => {
+      const header = panel.querySelector('.accordion-header');
+      if (header) {
+        header.addEventListener('click', function () {
+          const idx = parseInt(panel.getAttribute('data-index'));
+          if (!isNaN(idx)) {
+            stopAccordionAuto();
+            activateAccordion(idx);
+            startAccordionAuto();
+          }
+        });
+      }
+    });
+
+    activateAccordion(0);
+    startAccordionAuto();
+  }
+
   const carousel = document.getElementById('hero-carousel');
   if (carousel) {
     carousel.addEventListener('mouseenter', stopAutoPlay);
