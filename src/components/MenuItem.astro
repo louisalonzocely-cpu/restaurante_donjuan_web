@@ -1,0 +1,24 @@
+---
+export interface Props {
+  name: string;
+  desc?: string;
+  price: string;
+  subprice?: string;
+  veg?: boolean;
+}
+const { name, desc, price, subprice, veg } = Astro.props;
+---
+
+<div class="menu-item">
+  <div class="menu-item-info">
+    <div class="menu-item-name">
+      {name}
+      {veg && <span class="veg-tag">(V)</span>}
+    </div>
+    {desc && <div class="menu-item-desc">{desc}</div>}
+  </div>
+  <div class="menu-item-price">
+    {price && <span>$ {price}</span>}
+    {subprice && <span class="sub-price">{subprice}</span>}
+  </div>
+</div>

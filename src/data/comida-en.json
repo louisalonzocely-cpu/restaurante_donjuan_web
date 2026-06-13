@@ -1,0 +1,90 @@
+{
+  "categories": [
+    {
+      "id": "entradas-frias",
+      "title": "Cold Starters",
+      "items": [
+        { "name": "SNOOK CEVICHE", "desc": "coconut milk, cilantro, toasted corn", "price": "61,000" },
+        { "name": "GRILLED BEEF TATAKI", "desc": "panela teriyaki, suero costeno, olive oil", "price": "49,000" },
+        { "name": "SALMON TIRADITO", "desc": "soy marinade, lulo, citrus, crispy potatoes", "price": "53,000" },
+        { "name": "PRAWN CARPACCIO", "desc": "lemon, avocado, black rice", "price": "61,000" },
+        { "name": "BEEF TARTARE", "desc": "crispy tapioca, truffle mayonnaise", "price": "53,000" },
+        { "name": "DAILY CRUDO", "desc": "yellow chili, rocoto, fresh grapefruit", "price": "51,000" },
+        { "name": "TUNA", "desc": "crispy rice, artichoke aioli, spicy pineapple", "price": "50,000" },
+        { "name": "GREEN PAPAYA SALAD", "desc": "tamarind vinaigrette, peanuts, noodles", "price": "51,000", "veg": true },
+        { "name": "FRESH SALAD", "desc": "tomatoes, palm hearts, onions, avocado, crispy quinoa", "price": "49,000", "veg": true },
+        { "name": "SALMON CRUDO QUIBBE", "desc": "yogurt bread, artichoke cream", "price": "53,000" }
+      ]
+    },
+    {
+      "id": "entradas-calientes",
+      "title": "Hot Starters",
+      "items": [
+        { "name": "FALAFEL", "desc": "chickpea and lentil, eggplant cream, toasted bread", "price": "45,000", "veg": true },
+        { "name": "BLACK MUSSELS", "desc": "white wine, parsley, onion, toast", "price": "75,000" },
+        { "name": "GRILLED SHRIMP", "desc": "passion fruit sauce, pico de gallo", "price": "55,000" },
+        { "name": "GRILLED PUTUMAYO PALM HEARTS", "desc": "pea hummus, sweet onion", "price": "50,000", "veg": true },
+        { "name": "CRAB CAKES", "desc": "butter, garlic, red pepper, white wine", "price": "89,000" },
+        { "name": "FISH TACOS", "desc": "homemade cole slaw, crispy onion, cheese", "price": "54,000" },
+        { "name": "BRAISED SHORT RIB CANNELLONI", "desc": "corn dust, cheese sauce", "price": "52,000" },
+        { "name": "MUSHROOM RAVIOLI", "desc": "three-cheese sauce, olive oil, black dust", "price": "56,000", "veg": true },
+        { "name": "FREE-RANGE CHICKEN YAKITORI", "desc": "lemongrass, arracacha", "price": "49,000" },
+        { "name": "GRILLED LOBSTER TAIL", "desc": "butter, confit garlic, lemon", "price": "79,000" },
+        { "name": "PANCETA", "desc": "tamarind, mushrooms, Colombian cocoa", "price": "51,000" },
+        { "name": "GRILLED OCTOPUS", "desc": "bacon, confit potatoes, sun-dried tomatoes, sour cream", "price": "89,000" },
+        { "name": "ROASTED EGGPLANT", "desc": "bok choy, tomato ragu, ginger", "price": "47,000", "veg": true }
+      ]
+    },
+    {
+      "id": "principales",
+      "title": "Main Courses",
+      "items": [
+        { "name": "GRILLED SNOOK", "desc": "lemon risotto, parmesan, tomatoes", "price": "82,000" },
+        { "name": "SEA BASS", "desc": "cayeye, shrimp sauce, tomatoes, coconut milk", "price": "83,000" },
+        { "name": "ROASTED SNOOK", "desc": "barley tabbouleh, eggplant cream", "price": "81,000" },
+        { "name": "PAN-FRIED SNOOK", "desc": "garlic refrito, pan-fried potatoes", "price": "80,000" },
+        { "name": "SAUTEED PRAWNS", "desc": "lemon cream, vegetables, coconut rice", "price": "94,000" },
+        { "name": "PRAWN RISOTTO", "desc": "fresh tomatoes, mascarpone, parmesan", "price": "79,000" },
+        { "name": "FISH AND SHRIMP CURRY", "desc": "vegetables, lemongrass rice, crispy onions", "price": "81,000" },
+        { "name": "RIGATONI", "desc": "salmon, straciatella, arugula pesto", "price": "79,000" },
+        { "name": "GRILLED RIBEYE ANGUS BEEF", "desc": "mustard, crispy tapioca", "price": "199,000" },
+        { "name": "ROAST CHICKEN", "desc": "achiote, fresh vegetable risotto, fried cauliflower", "price": "77,000" },
+        { "name": "LAMB CHOPS", "desc": "yuca and hogao ragu, aioli", "price": "127,000" },
+        { "name": "BEEF WELLINGTON", "desc": "bearnaise, grilled baby gem, marinade", "price": "91,000" },
+        { "name": "OXTAIL IN RED WINE", "desc": "triple-cooked mashed potato, reduction", "price": "90,000" },
+        { "name": "GRILLED BEEF RIBEYE", "desc": "boronia, palm heart ceviche", "price": "149,000" },
+        { "name": "GRILLED PORK CHOP", "desc": "caramelized potatoes, corozo chutney", "price": "81,000" },
+        { "name": "BEEF FLANK STEAK", "desc": "mushroom risoni, piquillo peppers, chimichurri", "price": "129,000" },
+        { "name": "6-HOUR RIBS", "desc": "crushed potatoes, chorizo, glazed carrots, ginger", "price": "99,000" },
+        { "name": "VEGETABLE RISOTTO", "desc": "palm hearts, sun-dried tomatoes, asparagus", "price": "69,000", "veg": true }
+      ]
+    },
+    {
+      "id": "porciones",
+      "title": "Sides",
+      "items": [
+        { "name": "GRILLED ASPARAGUS", "price": "32,000" },
+        { "name": "CRISPY TAPIOCA AND SUERO", "price": "27,000" },
+        { "name": "CAYEYE", "price": "19,000" },
+        { "name": "COCONUT OR LEMONGRASS RICE", "price": "16,000" },
+        { "name": "WEDGE POTATOES", "price": "19,000" },
+        { "name": "CRIOLLA POTATOES", "price": "27,000" },
+        { "name": "MUSHROOM RISONI", "price": "29,000" },
+        { "name": "BREAD PORTION", "price": "9,000" }
+      ]
+    },
+    {
+      "id": "postres",
+      "title": "Desserts",
+      "items": [
+        { "name": "COLOMBIAN CHOCOLATE CAKE", "desc": "vanilla ice cream, strawberries", "price": "34,000" },
+        { "name": "PINEAPPLE CUBES", "desc": "rum, coconut milk, coconut ice cream, suero", "price": "32,000" },
+        { "name": "BISCUIT", "desc": "white chocolate, salted caramel, banana", "price": "34,000" },
+        { "name": "APPLE AND AREQUIPE TART", "desc": "vanilla ice cream, macadamia cloud", "price": "34,000" },
+        { "name": "MANDARIN LEMON", "desc": "meringue, limoncello, lemon zest", "price": "35,000" },
+        { "name": "70% CHOCOLATE GANACHE", "desc": "coconut anglaise, blackberry gel, praline", "price": "33,000" },
+        { "name": "HOMEMADE TORRIJAS", "desc": "chocolate ice cream, almonds", "price": "32,000" }
+      ]
+    }
+  ]
+}

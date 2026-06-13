@@ -1,0 +1,16 @@
+{
+  "name": "Restaurante Donjuán Cartagena",
+  "short_name": "Donjuán",
+  "description": "Restaurante de cocina de autor en el centro histórico de Cartagena.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#041118",
+  "theme_color": "#041118",
+  "icons": [
+    {
+      "src": "/images/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

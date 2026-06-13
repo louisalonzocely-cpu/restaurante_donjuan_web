@@ -1,0 +1,211 @@
+{
+  "categories": [
+    {
+      "id": "aperitivos",
+      "title": "Aperitivos y Digestivos",
+      "items": [
+        { "name": "Ricard", "price": "30,000" },
+        { "name": "Badran Vermut", "price": "32,000" },
+        { "name": "Campari", "price": "35,000" },
+        { "name": "Oporto Graham's", "price": "39,000", "subprice": "Botella $ 470,000" },
+        { "name": "Jerez Tio Pepe", "price": "32,000" },
+        { "name": "Frangelico", "price": "39,000" },
+        { "name": "Amaretto", "price": "41,000" },
+        { "name": "Grand Marnier", "price": "50,000" },
+        { "name": "Cointreau", "price": "35,000" },
+        { "name": "Sambuca", "price": "39,000" },
+        { "name": "Limoncello", "price": "38,000" },
+        { "name": "Licor 43", "price": "35,000" }
+      ]
+    },
+    {
+      "id": "whisky",
+      "title": "Whisky",
+      "items": [
+        { "name": "J.W Blue Label", "price": "220,000", "subprice": "Botella $ 2,700,000" },
+        { "name": "J.W Black Label", "price": "36,000", "subprice": "Botella $ 450,000" },
+        { "name": "J.W Double Black", "price": "44,000", "subprice": "Botella $ 570,000" },
+        { "name": "Buchanan's 12 años", "price": "37,000", "subprice": "Botella $ 460,000" },
+        { "name": "Buchanan's Master", "price": "44,000", "subprice": "Botella $ 570,000" },
+        { "name": "Chivas Regal 12", "price": "36,000", "subprice": "Botella $ 450,000" },
+        { "name": "Chivas Mizunara", "price": "62,000", "subprice": "Botella $ 780,000" },
+        { "name": "Chivas Regal 18", "price": "80,000", "subprice": "Botella $ 940,000" },
+        { "name": "Old Parr 12 años", "price": "36,000", "subprice": "Botella $ 450,000" },
+        { "name": "Buchanan's 12 375 ml", "price": "", "subprice": "Botella $ 270,000" },
+        { "name": "Chivas Regal 12 375 ml", "price": "", "subprice": "Botella $ 260,000" },
+        { "name": "Old Parr 500 ml", "price": "", "subprice": "Botella $ 330,000" }
+      ]
+    },
+    {
+      "id": "whiskey",
+      "title": "Whiskey & Bourbon",
+      "items": [
+        { "name": "Jameson", "price": "38,000", "subprice": "Botella $ 500,000" },
+        { "name": "Woodford Reserve", "price": "49,000", "subprice": "Botella $ 630,000" },
+        { "name": "Jack Daniel's", "price": "39,000", "subprice": "Botella $ 470,000" },
+        { "name": "Jim Beam 1000 ml", "price": "34,000", "subprice": "Botella $ 520,000" }
+      ]
+    },
+    {
+      "id": "single-malt",
+      "title": "Single Malt",
+      "items": [
+        { "name": "The Glenlivet Captain's Reserve", "price": "49,000", "subprice": "Botella $ 630,000" },
+        { "name": "The Glenlivet 12 años", "price": "45,000", "subprice": "Botella $ 560,000" },
+        { "name": "The Glenlivet Caribbean", "price": "44,000", "subprice": "Botella $ 540,000" },
+        { "name": "The Glenlivet Founders", "price": "41,000", "subprice": "Botella $ 510,000" },
+        { "name": "Macallan Sherry Oak 12", "price": "95,000", "subprice": "Botella $ 1,200,000" },
+        { "name": "Macallan Double Cask 15", "price": "150,000", "subprice": "Botella $ 1,900,000" },
+        { "name": "Macallan Double Cask 12", "price": "70,000", "subprice": "Botella $ 850,000" },
+        { "name": "The Glenfiddich 12 años", "price": "47,000", "subprice": "Botella $ 570,000" },
+        { "name": "The Glenfiddich 15 años", "price": "62,000", "subprice": "Botella $ 840,000" },
+        { "name": "The Glenfiddich 18 años", "price": "99,000", "subprice": "Botella $ 1,350,000" },
+        { "name": "The Glenfiddich 21 años", "price": "220,000", "subprice": "Botella $ 2,800,000" },
+        { "name": "Glenmorangie La Santa", "price": "56,000", "subprice": "Botella $ 700,000" },
+        { "name": "Glenmorangie Nectar d'Or", "price": "66,000", "subprice": "Botella $ 830,000" }
+      ]
+    },
+    {
+      "id": "ginebra",
+      "title": "Ginebra",
+      "items": [
+        { "name": "Tanqueray", "price": "39,000", "subprice": "Botella $ 470,000" },
+        { "name": "Tanqueray Ten", "price": "60,000", "subprice": "Botella $ 770,000" },
+        { "name": "Beefeater 24", "price": "60,000", "subprice": "Botella $ 770,000" },
+        { "name": "Beefeater", "price": "38,000", "subprice": "Botella $ 460,000" },
+        { "name": "Monkey 47 500 ml", "price": "70,000", "subprice": "Botella $ 620,000" },
+        { "name": "Hendrick's", "price": "45,000", "subprice": "Botella $ 590,000" },
+        { "name": "Citadelle", "price": "41,000", "subprice": "Botella $ 520,000" },
+        { "name": "Blue Ribbon", "price": "45,000", "subprice": "Botella $ 560,000" },
+        { "name": "The London No 1", "price": "60,000", "subprice": "Botella $ 770,000" },
+        { "name": "Selva", "price": "41,000", "subprice": "Botella $ 520,000" }
+      ]
+    },
+    {
+      "id": "tequila",
+      "title": "Tequila",
+      "items": [
+        { "name": "Maestro Dobel Diamante", "price": "65,000", "subprice": "Botella $ 820,000" },
+        { "name": "1800 Reserva Anejo", "price": "50,000", "subprice": "Botella $ 660,000" },
+        { "name": "Altos Plata", "price": "42,000", "subprice": "Botella $ 520,000" },
+        { "name": "Altos Reposado", "price": "42,000", "subprice": "Botella $ 520,000" },
+        { "name": "Don Julio Reposado", "price": "58,000", "subprice": "Botella $ 740,000" },
+        { "name": "Don Julio 70", "price": "70,000", "subprice": "Botella $ 850,000" },
+        { "name": "Santanera Tahona Organico", "price": "90,000", "subprice": "Botella $ 1,150,000" },
+        { "name": "Jose Cuervo Especial", "price": "33,000", "subprice": "Botella $ 390,000" },
+        { "name": "Patron Silver", "price": "49,000", "subprice": "Botella $ 620,000" }
+      ]
+    },
+    {
+      "id": "mezcal",
+      "title": "Mezcal",
+      "items": [
+        { "name": "Ojo de Tigre", "price": "40,000", "subprice": "Botella $ 540,000" },
+        { "name": "Amores", "price": "52,000", "subprice": "Botella $ 640,000" },
+        { "name": "400 Conejos", "price": "46,000", "subprice": "Botella $ 620,000" },
+        { "name": "Montelobos", "price": "56,000", "subprice": "Botella $ 740,000" }
+      ]
+    },
+    {
+      "id": "vodka",
+      "title": "Vodka",
+      "items": [
+        { "name": "Absolut", "price": "32,000", "subprice": "Botella $ 360,000" },
+        { "name": "Grey Goose", "price": "50,000", "subprice": "Botella $ 640,000" },
+        { "name": "Ketel One", "price": "41,000", "subprice": "Botella $ 550,000" },
+        { "name": "Tito's", "price": "41,000", "subprice": "Botella $ 550,000" }
+      ]
+    },
+    {
+      "id": "ron",
+      "title": "Ron y Aguardiente",
+      "subsections": [
+        {
+          "title": "Pisco y Aguardiente",
+          "items": [
+            { "name": "Pisco Demonio de los Andes", "price": "33,000", "subprice": "Botella $ 400,000" },
+            { "name": "Pisco Huamani", "price": "38,000", "subprice": "Botella $ 470,000" },
+            { "name": "Aguardiente Amarillo", "price": "25,000", "subprice": "Botella $ 260,000" },
+            { "name": "Aguardiente Antioqueno", "price": "25,000", "subprice": "Botella $ 260,000" },
+            { "name": "Aguardiente Antioqueno 375 ml", "price": "", "subprice": "Botella $ 160,000" },
+            { "name": "Viche Mano de Buey 750 ml", "price": "33,000", "subprice": "Botella $ 380,000" }
+          ]
+        },
+        {
+          "title": "Ron",
+          "items": [
+            { "name": "La Hechicera", "price": "53,000", "subprice": "Botella $ 670,000" },
+            { "name": "La Hechicera S.E. No.2", "price": "67,000", "subprice": "Botella $ 850,000" },
+            { "name": "Quimbaya Artesanal", "price": "48,000", "subprice": "Botella $ 590,000" },
+            { "name": "Santa Teresa 1796", "price": "48,000", "subprice": "Botella $ 590,000" },
+            { "name": "Viejo de Caldas 8", "price": "31,000", "subprice": "Botella $ 330,000" },
+            { "name": "Havana Club 7 años", "price": "32,000", "subprice": "Botella $ 350,000" },
+            { "name": "Botran 15", "price": "35,000", "subprice": "Botella $ 450,000" },
+            { "name": "Dictador 12", "price": "60,000", "subprice": "Botella $ 750,000" },
+            { "name": "Dictador 20", "price": "75,000", "subprice": "Botella $ 940,000" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cerveza",
+      "title": "Cerveza",
+      "items": [
+        { "name": "BBC Chapinero Porter Negra", "desc": "Cerveza artesanal", "price": "22,000" },
+        { "name": "BBC Cajica Draft", "desc": "Cerveza artesanal", "price": "22,000" },
+        { "name": "Stella Artois", "desc": "Cerveza importada", "price": "18,000" },
+        { "name": "Corona Cero", "desc": "Sin alcohol", "price": "17,000" },
+        { "name": "Club Colombia Dorada", "price": "15,000" },
+        { "name": "Club Colombia Trigo", "price": "15,000" },
+        { "name": "Coronita", "price": "13,000" },
+        { "name": "Budweiser", "price": "13,000" },
+        { "name": "Costeñita", "price": "9,000" }
+      ]
+    },
+    {
+      "id": "otros",
+      "title": "Otras Bebidas",
+      "items": [
+        { "name": "Limonada o Jugo Natural", "price": "14,000" },
+        { "name": "Soda de Corozo", "price": "19,000" },
+        { "name": "Soda de Maracuya", "price": "19,000" },
+        { "name": "Soda de Piña y Naranja", "price": "19,000" },
+        { "name": "Agua Manantial 500 ml", "price": "11,000" },
+        { "name": "Agua Manantial con Gas 300 ml", "price": "8,000" },
+        { "name": "Gaseosas", "price": "11,000" },
+        { "name": "Redbull", "price": "24,000" },
+        { "name": "Te Helado", "price": "16,000" },
+        { "name": "Fever Tree Tonica", "price": "22,000" },
+        { "name": "Fever Tree Ginger Beer", "price": "22,000" },
+        { "name": "Zumo de Limon", "price": "8,000" },
+        { "name": "Michelada", "price": "4,000" }
+      ]
+    },
+    {
+      "id": "te-cafe",
+      "title": "Te y Cafe",
+      "subsections": [
+        {
+          "title": "Te y Aromaticas",
+          "items": [
+            { "name": "Aromatica de Frutas", "price": "10,000" },
+            { "name": "Te Harney & Sons", "price": "19,000" }
+          ]
+        },
+        {
+          "title": "Cafe Nespresso",
+          "items": [
+            { "name": "Ristretto", "price": "11,000" },
+            { "name": "Espresso", "price": "11,000" },
+            { "name": "Lungo", "price": "11,000" },
+            { "name": "Macchiato", "price": "13,000" },
+            { "name": "Capuccino", "price": "13,000" },
+            { "name": "Latte", "price": "13,000" },
+            { "name": "Carajillo", "price": "49,000" },
+            { "name": "Nespresso Martini", "price": "49,000" }
+          ]
+        }
+      ]
+    }
+  ]
+}

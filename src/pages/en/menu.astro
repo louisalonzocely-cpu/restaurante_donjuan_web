@@ -1,0 +1,218 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import MenuItem from '../../components/MenuItem.astro';
+import VinoItem from '../../components/VinoItem.astro';
+import '../../styles/menu.css';
+
+import comida from '../../data/comida-en.json';
+import licores from '../../data/licores-en.json';
+import vinos from '../../data/vinos-en.json';
+import cocteles from '../../data/cocteles-en.json';
+---
+
+<Layout currentPage="menu" lang="en" title="Digital Menu — Restaurante Donjuán Cartagena" description="Explore the digital menu of Restaurante Donjuán in Cartagena: traditional and author food, wines, spirits, and signature cocktails." canonical="https://restaurante-donjuan-web.pages.dev/en/menu">
+
+  <Header lang="en" currentPage="menu" />
+
+  <!-- Menu JSON-LD Structured Data -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Menu",
+      "name": "Donjuán Cartagena Menu",
+      "description": "Digital menu of Restaurante Donjuán: traditional and signature cuisine, wines, spirits, and cocktails.",
+      "hasMenuSection": [
+        { "@type": "MenuSection", "name": "Starters" },
+        { "@type": "MenuSection", "name": "Main Courses" },
+        { "@type": "MenuSection", "name": "Cocktails" },
+        { "@type": "MenuSection", "name": "Spirits" },
+        { "@type": "MenuSection", "name": "Wines" }
+      ]
+    }
+  </script>
+
+  <!-- Page Title & Header -->
+  <section class="relative pt-24 md:pt-28 pb-12 md:pb-20 bg-stone-950 border-b border-stone-900 overflow-hidden">
+    <div class="absolute inset-0 z-0 opacity-15">
+      <img src="/images/banner-pulpo.webp" alt="Grilled octopus — Pulpo a la brasa at Restaurante Donjuán" class="w-full h-full object-cover" />
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+      <span class="text-xs uppercase tracking-[0.4em] text-gold-400 block mb-4 font-sans">Contemporary flavor</span>
+      <h1 class="text-4xl md:text-6xl font-serif text-white font-light tracking-wide">The Donjuán Menu</h1>
+      <p class="text-stone-400 font-sans text-sm mt-4 max-w-2xl mx-auto font-light leading-relaxed">
+        Browse our selection of author cuisine and select drinks. We fuse native Colombian ingredients with refined international techniques.
+      </p>
+      <div class="w-16 h-[1px] bg-gold-500 mx-auto mt-6"></div>
+    </div>
+  </section>
+
+  <!-- ============ CARTA CONTENT ============ -->
+  <section class="carta-section" id="carta">
+    <div class="container">
+
+      <!-- TARJETAS PRINCIPALES -->
+      <div class="carta-cards">
+        <div class="carta-card active" data-category="comida">
+          <h3>Food</h3>
+          <p>Starters, mains, desserts</p>
+        </div>
+        <div class="carta-card" data-category="licores">
+          <h3>Spirits</h3>
+          <p>Whisky, gin, tequila, rum and more</p>
+        </div>
+        <div class="carta-card" data-category="vinos">
+          <h3>Wines</h3>
+          <p>White, red, sparkling</p>
+        </div>
+        <div class="carta-card" data-category="cocteles">
+          <h3>Cocktails</h3>
+          <p>Signature cocktails</p>
+        </div>
+      </div>
+
+      <!-- ============ PANEL COMIDA ============ -->
+      <div class="carta-panels active" id="panel-comida">
+        <div class="sub-tabs">
+          {comida.categories.map((cat, i) => (
+            <button class={`sub-tab${i === 0 ? ' active' : ''}`} data-sub={cat.id}>
+              {cat.title} <span class="count">{cat.items.length}</span>
+            </button>
+          ))}
+        </div>
+
+        {comida.categories.map((cat, i) => (
+          <div class={`sub-content${i === 0 ? ' active' : ''}`} id={cat.id}>
+            <h2 class="section-title">{cat.title}</h2>
+            <div class="menu-items">
+              {cat.items.map(item => (
+                <MenuItem name={item.name} desc={item.desc} price={item.price} veg={item.veg} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- ============ PANEL LICORES ============ -->
+      <div class="carta-panels" id="panel-licores">
+        <div class="sub-tabs">
+          {licores.categories.map((cat, i) => (
+            <button class={`sub-tab${i === 0 ? ' active' : ''}`} data-sub={cat.id}>
+              {cat.title} <span class="count">{cat.items?.length || cat.subsections?.reduce((a, s) => a + s.items.length, 0) || 0}</span>
+            </button>
+          ))}
+        </div>
+
+        {licores.categories.map((cat, i) => (
+          <div class={`sub-content${i === 0 ? ' active' : ''}`} id={cat.id}>
+            <h2 class="section-title">{cat.title}</h2>
+            {cat.subsections ? (
+              cat.subsections.map(sub => (
+                <>
+                  <h3 class="section-sub">{sub.title}</h3>
+                  <div class="menu-items">
+                    {sub.items.map(item => (
+                      <MenuItem name={item.name} desc={item.desc} price={item.price} subprice={item.subprice} />
+                    ))}
+                  </div>
+                </>
+              ))
+            ) : (
+              <div class="menu-items">
+                {cat.items ? cat.items.map(item => (
+                  <MenuItem name={item.name} desc={item.desc} price={item.price} subprice={item.subprice} />
+                )) : null}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <!-- ============ PANEL VINOS ============ -->
+      <div class="carta-panels" id="panel-vinos">
+        <div class="sub-tabs">
+          {vinos.categories.map((cat, i) => (
+            <button class={`sub-tab${i === 0 ? ' active' : ''}`} data-sub={cat.id}>
+              {cat.title} <span class="count">{cat.items?.length || cat.subcategories?.reduce((a, s) => a + s.items.length, 0) || 0}</span>
+            </button>
+          ))}
+        </div>
+
+        {vinos.categories.map((cat, i) => (
+          <div class={`sub-content${i === 0 ? ' active' : ''}`} id={cat.id}>
+            <h2 class="section-title">{cat.title}</h2>
+
+            {cat.subcategories ? (
+              <>
+                <div class="inner-tabs">
+                  {cat.subcategories.map((sub, j) => (
+                    <button class={`inner-tab${j === 0 ? ' active' : ''}`} data-inner={sub.id}>
+                      {sub.title} <span class="count">{sub.items.length}</span>
+                    </button>
+                  ))}
+                </div>
+                {cat.subcategories.map((sub, j) => (
+                  <div class={`inner-content${j === 0 ? ' active' : ''}`} id={sub.id}>
+                    <div class="menu-items">
+                      {sub.items.map(item => (
+                        <VinoItem name={item.name} origin={item.origin} prices={item.prices} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </>
+            ) : (
+              <div class="menu-items">
+                {cat.items ? cat.items.map(item => (
+                  <VinoItem name={item.name} origin={item.origin} prices={item.prices} />
+                )) : null}
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <!-- ============ PANEL COCTELES ============ -->
+      <div class="carta-panels" id="panel-cocteles">
+        <div class="sub-tabs">
+          {cocteles.categories.map((cat, i) => (
+            <button class={`sub-tab${i === 0 ? ' active' : ''}`} data-sub={cat.id}>
+              {cat.title} <span class="count">{cat.items.length}</span>
+            </button>
+          ))}
+        </div>
+
+        {cocteles.categories.map((cat, i) => (
+          <div class={`sub-content${i === 0 ? ' active' : ''}`} id={cat.id}>
+            <h2 class="section-title">{cat.title}</h2>
+            <div class="menu-items">
+              {cat.items.map(item => (
+                <MenuItem name={item.name} desc={item.desc} price={item.price} />
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal-overlay" id="itemModal">
+      <div class="modal-card">
+        <button class="modal-close">&times;</button>
+        <div class="modal-body">
+          <h3 class="modal-name"></h3>
+          <p class="modal-desc"></p>
+          <div class="modal-price"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer lang="en" />
+
+  <script>
+    import '../../scripts/menu.js';
+  </script>
+</Layout>

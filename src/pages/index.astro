@@ -1,0 +1,743 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout currentPage="index" canonical="https://restaurante-donjuan-web.pages.dev">
+
+    <Header lang="es" currentPage="index" />
+
+    <!-- Hero / Landing Section -->
+    <section id="inicio" class="relative h-screen w-full overflow-hidden flex items-start justify-center">
+        <!-- Carousel Background -->
+        <div id="hero-carousel" class="absolute inset-0 z-0">
+            <div class="absolute inset-0 bg-gradient-to-b from-[#041118]/85 via-[#041118]/65 to-[#041118] z-10"></div>
+            
+            <!-- Slides -->
+            <div class="carousel-slide active">
+                <img src="/images/banner-home.webp" alt="Plato estrella del Restaurante Donjuán" class="w-full h-full object-cover animate-subtle-zoom" />
+            </div>
+            <div class="carousel-slide">
+                <img src="/images/banner-pulpo.webp" alt="Pulpo a la brasa" class="w-full h-full object-cover animate-subtle-zoom" />
+            </div>
+            <div class="carousel-slide">
+                <img src="/images/robalo-parrilla.webp" alt="Robalo a la parrilla" class="w-full h-full object-cover animate-subtle-zoom" />
+            </div>
+
+            <!-- Dots -->
+            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-3">
+                <button class="carousel-dot active w-2.5 h-2.5 rounded-full bg-white/80 hover:bg-white transition-all duration-300" data-index="0" aria-label="Slide 1"></button>
+                <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300" data-index="1" aria-label="Slide 2"></button>
+                <button class="carousel-dot w-2.5 h-2.5 rounded-full bg-white/40 hover:bg-white/70 transition-all duration-300" data-index="2" aria-label="Slide 3"></button>
+            </div>
+        </div>
+
+        <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-52 md:pt-48">
+            <!-- Sello decorativo -->
+            <img src="/images/sello-donjuan.webp" alt="Sello Donjuán" class="w-36 md:w-48 mx-auto -mt-8 mb-2 md:mb-3 animate-fade-in opacity-0 brightness-0 invert blur-[0.5px]" style="animation-delay: 0.3s" />
+
+            <!-- Main Title -->
+            <h1 class="text-8xl md:text-[10rem] lg:text-[13rem] font-['Cormorant',serif] text-white-pure font-light tracking-wide mb-6 md:mb-8 animate-slide-up opacity-0" style="animation-delay: 0.6s">
+                don<span class="text-emerald-500 italic">juan</span>
+            </h1>
+            
+            <!-- Description -->
+            <p class="text-base md:text-lg lg:text-xl font-sans text-gray-200 max-w-2xl mx-auto font-light leading-relaxed mb-8 md:mb-12 animate-slide-up opacity-0" style="animation-delay: 0.9s">
+                Cocina de autor con alma contemporánea, inspirada en la exuberancia de los ingredientes locales del Caribe colombiano.
+            </p>
+            
+            <!-- CTA Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up opacity-0" style="animation-delay: 1.2s">
+                <a href="#reservas" class="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white-pure font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 shadow-lg shadow-emerald-500/10">
+                    Reservar Mesa
+                </a>
+                <a href="/menu" class="w-full sm:w-auto px-8 py-4 border border-stone-500 hover:border-gold-400 text-white-pure hover:text-gold-400 font-sans text-xs uppercase tracking-widest font-medium transition-all duration-300 backdrop-blur-sm">
+                    Explorar Menú
+                </a>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- History / Philosophy Section -->
+    <section id="historia" class="py-24 md:py-32 relative overflow-hidden bg-stone-925">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="text-center mb-16 md:mb-24">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-500 block mb-3 font-sans">Nuestra Filosofía</span>
+                <h2 class="text-3xl md:text-5xl font-serif text-white font-light tracking-wide">El Alma detrás de los Fogones</h2>
+                <div class="w-16 h-[1px] bg-gold-500 mx-auto mt-6"></div>
+            </div>
+
+            <!-- Editorial Layout Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Col 1: Main Image -->
+                <div class="lg:col-span-6 relative flex justify-center">
+                    <div class="relative overflow-hidden border border-gold-500/10 group max-w-xs w-full">
+                        <img src="/images/juanf.webp" alt="Chef Juan Felipe Camacho" class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div class="absolute bottom-4 left-4 bg-stone-950/80 backdrop-blur-sm border border-gold-500/20 px-4 py-2">
+                            <p class="text-xs font-serif text-gold-400">Juan Felipe Camacho — <span class="italic text-stone-300">Chef & Fundador</span></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col 2: Narrative Text -->
+                <div class="lg:col-span-6 flex flex-col gap-8 lg:pl-6">
+                    <p class="text-stone-400 text-xs uppercase tracking-widest font-sans">Desde 2009</p>
+                    <h3 class="text-2xl md:text-4xl font-serif text-gold-400 font-light leading-tight">Un tributo honesto a los productores locales y la pesca artesanal</h3>
+                    
+                    <div class="h-[1px] w-full bg-gradient-to-r from-gold-500/30 to-transparent"></div>
+                    
+                    <div class="flex flex-col gap-6 text-stone-300 font-light leading-relaxed text-sm md:text-base">
+                        <p>
+                            Donjuán es el resultado de años de pasión de <strong class="text-white font-medium">Juan Felipe Camacho</strong>. Desde su llegada a Cartagena en 2005, se dedicó a recorrer el Caribe para buscar pescadores artesanales, cultivos de sustitución y pequeños productores locales para que su concepto gastronómico estuviera completo.
+                        </p>
+                        <p>
+                            Nuestra cocina destaca por el absoluto respeto al producto. Los pescados y mariscos más frescos del litoral caribeño, las carnes colombianas seleccionadas y la inigualable oferta de vegetales de nuestro país se fusionan para crear platos casuales pero sofisticados, logrando combinaciones sencillas pero memorables.
+                        </p>
+                        <p>
+                            Tras dos años de pausa, reabrimos nuestras puertas en el corazón del "corralito de piedra", en una casona histórica bellamente restaurada para continuar escribiendo la historia moderna de Cartagena a través del sabor.
+                        </p>
+                    </div>
+
+                    <!-- Quote Block -->
+                    <div class="border-l-2 border-gold-500 pl-6 py-2 my-2 italic text-stone-400 font-serif text-lg leading-relaxed">
+                        "Buscamos la sofisticación a través de la sencillez y la frescura del ingrediente local."
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Exquisite Highlight Menu -->
+    <section id="carta" class="py-12 md:py-20 relative overflow-hidden bg-stone-950 scroll-mt-20 bg-fixed bg-cover bg-center" style="background-image: url('/images/fondo-historia.webp');">
+        <div class="absolute inset-0 bg-stone-950/85 z-0"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-8 md:mb-14">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-500 block mb-3 font-sans">Selección de Autor</span>
+                <h2 class="text-3xl md:text-5xl font-serif text-white font-light tracking-wide">La Carta donjuan</h2>
+                <p class="text-stone-400 font-sans text-sm mt-4 max-w-xl mx-auto">Una muestra representativa de nuestras creaciones culinarias más aclamadas.</p>
+                <div class="w-16 h-[1px] bg-gold-500 mx-auto mt-6"></div>
+            </div>
+
+            <!-- Custom Category Tabs -->
+            <div class="flex justify-center mb-6 md:mb-12">
+                <div class="inline-flex gap-1 md:gap-8 overflow-x-auto pb-2 md:pb-4 max-w-full scrollbar-hide">
+                <button data-tab="tab-entradas" id="btn-tab-entradas" class="menu-tab-btn active px-2 md:px-6 py-2 text-[10px] md:text-xs uppercase tracking-widest border-b border-gold-500 text-gold-400 font-medium whitespace-nowrap transition-all duration-300">
+                    Entradas
+                </button>
+                <button data-tab="tab-fuertes" id="btn-tab-fuertes" class="menu-tab-btn px-2 md:px-6 py-2 text-[10px] md:text-xs uppercase tracking-widest border-b border-transparent text-stone-400 hover:text-white whitespace-nowrap transition-all duration-300">
+                    Platos Fuertes
+                </button>
+                <button data-tab="tab-postres" id="btn-tab-postres" class="menu-tab-btn px-2 md:px-6 py-2 text-[10px] md:text-xs uppercase tracking-widest border-b border-transparent text-stone-400 hover:text-white whitespace-nowrap transition-all duration-300">
+                    Postres
+                </button>
+                <button data-tab="tab-cocteles" id="btn-tab-cocteles" class="menu-tab-btn px-2 md:px-6 py-2 text-[10px] md:text-xs uppercase tracking-widest border-b border-transparent text-stone-400 hover:text-white whitespace-nowrap transition-all duration-300">
+                    Coctelería
+                </button>
+                </div>
+            </div>
+
+            <!-- Tab Contents -->
+            <div class="relative">
+                
+                <!-- Category 1: Entradas -->
+                <div id="tab-entradas" class="menu-category-panel grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 transition-all duration-500 opacity-100 scale-100">
+                    <!-- Item 1 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <img src="/images/crudo_robalo.webp" alt="Crudo de robalo" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Ceviche de Róbalo</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$61.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Con deliciosa leche de coco infusionada, cilantro fresco y maíz tostado crujiente del Caribe.</p>
+                            <span class="inline-block mt-2 text-[9px] uppercase tracking-widest bg-gold-500/10 text-gold-400 px-2 py-0.5 rounded">Recomendado</span>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <img src="/images/tartar-res.webp" alt="Tartar de Res" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Tartar de Res</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$53.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Acompañado de tapioca crujiente y una mayonesa suave de trufa de la casa.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <div class="w-16 sm:w-24 h-16 sm:h-24 bg-stone-900 border border-gold-500/10 flex items-center justify-center text-gold-500 text-xl group-hover:border-gold-500/35 transition-colors">
+                            <img src="/images/tataki-res.png" alt="Tataki de Res a la Parrilla" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
+                        </div>
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Tataki de Res a la Parrilla</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$49.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Teriyaki artesanal de panela, suero costeño tradicional y aceite de oliva extra virgen.</p>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <div class="w-16 sm:w-24 h-16 sm:h-24 bg-stone-900 border border-gold-500/10 flex items-center justify-center text-gold-500 text-xl group-hover:border-gold-500/35 transition-colors">
+                            <img src="/images/ensalada-papaya.png" alt="Ensalada de Papaya" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
+                        </div>
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Ensalada de Papaya Verde</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$51.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Vinagreta de tamarindo, maní tostado y noodles crujientes. Una explosión de frescura.</p>
+                            <span class="inline-block mt-2 text-[9px] uppercase tracking-widest bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded">Vegetariano</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 2: Fuertes -->
+                <div id="tab-fuertes" class="menu-category-panel hidden grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 transition-all duration-500 opacity-0 scale-95">
+                    <!-- Item 1 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <img src="/images/robalo-parrilla.webp" alt="Róbalo a la parrilla" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Róbalo a la Parrilla</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$82.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Acompañado de un sedoso risotto de limón, queso parmesano y tomates confitados.</p>
+                            <span class="inline-block mt-2 text-[9px] uppercase tracking-widest bg-gold-500/10 text-gold-400 px-2 py-0.5 rounded">Plato Estrella</span>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <img src="/images/banner-pulpo.webp" alt="Pulpo a la brasa" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Pulpo a la Brasa</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$89.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Con tocino crujiente, papas confitadas, tomates secos y un toque de crema agria de la casa.</p>
+                        </div>
+                    </div>
+                    <!-- Item 3 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 itms-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <div class="w-16 sm:w-24 h-16 sm:h-24 bg-stone-900 border border-gold-500/10 flex items-center justify-center text-gold-500 text-xl group-hover:border-gold-500/35 transition-colors">
+                            <svg class="w-8 h-8 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9" /><path d="M12 8v8M8 12h8" /></svg>
+                        </div>
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Ribeye Angus Beef</h4>
+                                <span class="font-sans text-golde-400 text-sm font-semibold">$199.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Corte premium a la parrilla, aderezado con mostaza antigua y de tapioca crujiente.</p>
+                        </div>
+                    </div>
+                    <!-- Item 4 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <div class="w-16 sm:w-24 h-16 sm:h-24 bg-stone-900 border border-gold-500/10 flex items-center justify-center text-gold-500 text-xl group-hover:border-gold-500/35 transition-colors">
+                            <svg class="w-8 h-8 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path d="M19 12a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                        </div>
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Corvina en Cayeye</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$83.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Servida sobre puré de plátano verde (cayeye), salsa cremosa de camarones y leche de coco.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 3: Postres -->
+                <div id="tab-postres" class="menu-category-panel hidden grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 transition-all duration-500 opacity-0 scale-95">
+                    <!-- Item 1 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <img src="/images/cubos-de-piña.webp" alt="Cubos de piña" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Cubos de Piña al Ron</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$32.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Con reducción de ron local, leche de coco, helado artesanal de coco y suero dulce costeño.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <div class="w-16 sm:w-24 h-16 sm:h-24 bg-stone-900 border border-gold-500/10 flex items-center justify-center text-gold-500 text-xl group-hover:border-gold-500/35 transition-colors">
+                            <svg class="w-8 h-8 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9" /><path d="M12 8v8M8 12h8" /></svg>
+                        </div>
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Tarta de Manzana y Arequipe</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$34.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Servida tibia, con helado artesanal de vainilla Bourbon y lluvia de nuez de macadamia.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Category 4: Cocteles -->
+                <div id="tab-cocteles" class="menu-category-panel hidden grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 transition-all duration-500 opacity-0 scale-95">
+                    <!-- Item 1 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <img src="/images/beso-latino.webp" alt="Beso Latino" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Beso Latino</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$48.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Cóctel de autor con mezcal Ojo de Tigre premium, arándanos macerados, crema de coco natural y jugo de limón.</p>
+                        </div>
+                    </div>
+                    <!-- Item 2 -->
+                    <div class="flex flex-row gap-3 sm:gap-4 items-start sm:items-center p-3 sm:p-4 bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-300 group">
+                        <img src="/images/Don-Juan-Restaurant-Cocteles.webp" alt="Coctelería de autor" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
+                        <div class="flex-1 text-left">
+                            <div class="flex justify-between items-baseline mb-2">
+                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Cosmo de Corozo</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$44.000</span>
+                            </div>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Versión caribeña del clásico Cosmopolitan con Vodka, Cointreau, reducción de corozo y limón.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- More Menu Button -->
+            <div class="text-center mt-6 md:mt-8">
+                <a href="/menu" class="inline-flex items-center gap-3 px-8 py-4 border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-stone-950 font-sans text-xs uppercase tracking-widest font-medium transition-all duration-300">
+                    Ver Carta Completa <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 md:py-32 bg-stone-925 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="text-center mb-16 md:mb-24">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-500 block mb-3 font-sans">Momentos Donjuán</span>
+                <h2 class="text-3xl md:text-5xl font-serif text-white font-light tracking-wide">Atmósfera, Cocina & Servicio</h2>
+                <div class="w-16 h-[1px] bg-gold-500 mx-auto mt-6"></div>
+            </div>
+
+            <!-- Grid Layout -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Img 1 -->
+                <div data-index="0" class="gallery-item relative overflow-hidden border border-gold-500/10 h-80 group cursor-pointer">
+                    <img src="/images/Don-Juan-Restaurant.webp" alt="Ambiente único" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                        <span class="text-xs uppercase tracking-widest text-gold-400 flex items-center gap-2"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> Ampliar</span>
+                        <p class="font-serif text-lg text-white">Ambiente Único</p>
+                    </div>
+                </div>
+
+                <!-- Img 2 -->
+                <div data-index="1" class="gallery-item relative overflow-hidden border border-gold-500/10 h-80 group cursor-pointer">
+                    <img src="/images/Don-Juan-Servicio.webp" alt="Servicio profesional" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                        <span class="text-xs uppercase tracking-widest text-gold-400 flex items-center gap-2"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> Ampliar</span>
+                        <p class="font-serif text-lg text-white">Servicio Impecable</p>
+                    </div>
+                </div>
+
+                <!-- Img 3 -->
+                <div data-index="2" class="gallery-item relative overflow-hidden border border-gold-500/10 h-80 group cursor-pointer">
+                    <img src="/images/Don-Juan-Restaurant-Cocteles.webp" alt="Coctelería de autor" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                        <span class="text-xs uppercase tracking-widest text-gold-400 flex items-center gap-2"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> Ampliar</span>
+                        <p class="font-serif text-lg text-white">Coctelería Creativa</p>
+                    </div>
+                </div>
+
+                <!-- Img 4 -->
+                <div data-index="3" class="gallery-item relative overflow-hidden border border-gold-500/10 h-80 group cursor-pointer">
+                    <img src="/images/banner-pulpo.webp" alt="Pulpo fresco" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                        <span class="text-xs uppercase tracking-widest text-gold-400 flex items-center gap-2"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> Ampliar</span>
+                        <p class="font-serif text-lg text-white">Nuestra Cocina</p>
+                    </div>
+                </div>
+
+                <!-- Img 5 -->
+                <div data-index="4" class="gallery-item relative overflow-hidden border border-gold-500/10 h-80 group cursor-pointer">
+                    <img src="/images/celebraciones.webp" alt="Celebraciones" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                        <span class="text-xs uppercase tracking-widest text-gold-400 flex items-center gap-2"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> Ampliar</span>
+                        <p class="font-serif text-lg text-white">Celebraciones Especiales</p>
+                    </div>
+                </div>
+
+                <!-- Img 6 -->
+                <div data-index="5" class="gallery-item relative overflow-hidden border border-gold-500/10 h-80 group cursor-pointer">
+                    <img src="/images/evento.webp" alt="Eventos privados" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-stone-950/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-between p-6">
+                        <span class="text-xs uppercase tracking-widest text-gold-400 flex items-center gap-2"><svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg> Ampliar</span>
+                        <p class="font-serif text-lg text-white">Cenas Privadas y VIP</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-50 bg-stone-950/98 backdrop-blur-md hidden justify-center items-center p-4">
+        <!-- Close Button -->
+        <button data-lightbox-action="close" class="absolute top-6 right-6 text-stone-300 hover:text-gold-400 transition-colors p-2 text-3xl" aria-label="Close">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+        <!-- Nav buttons -->
+        <button data-lightbox-action="prev" class="absolute left-6 text-stone-300 hover:text-gold-400 transition-colors p-4 text-3xl" aria-label="Previous">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" /></svg>
+        </button>
+        <button data-lightbox-action="next" class="absolute right-6 text-stone-300 hover:text-gold-400 transition-colors p-4 text-3xl" aria-label="Next">
+            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" /></svg>
+        </button>
+        
+        <!-- Image Container -->
+        <div class="max-w-4xl max-h-[80vh] flex flex-col items-center">
+            <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[70vh] object-contain border border-gold-500/20" />
+            <p id="lightbox-caption" class="text-gold-400 font-serif text-xl mt-6 text-center"></p>
+        </div>
+    </div>
+
+    <!-- Events -->
+    <section id="eventos" class="py-24 md:py-32 relative overflow-hidden bg-stone-950 bg-fixed bg-cover bg-center" style="background-image: url('/images/banner-tejido-verde.webp');">
+        <div class="absolute inset-0 bg-stone-950/85 z-0"></div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <!-- Section Header -->
+            <div class="text-center mb-8 md:mb-24">
+                <span class="text-xs uppercase tracking-[0.3em] text-gold-500 block mb-3 font-sans">Momentos Únicos</span>
+                <h2 class="text-3xl md:text-5xl font-serif text-white font-light tracking-wide">Celebra con Nosotros</h2>
+                <p class="text-stone-400 font-sans text-sm mt-4 max-w-xl mx-auto">Creamos experiencias memorables a la medida de tus momentos más especiales en el corazón del centro histórico.</p>
+                <div class="w-16 h-[1px] bg-gold-500 mx-auto mt-6"></div>
+            </div>
+
+            <!-- Event Cards Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-2 gap-4 max-w-5xl mx-auto">
+                
+                <!-- Event 1 -->
+                <div class="flip-card bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-500 h-72 md:h-64 md:flex" tabindex="0" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full md:flex md:flex-row">
+                        <!-- Front - mobile: image+title overlay, desktop: image only -->
+                        <div class="flip-card-front absolute md:relative inset-0 md:w-2/5 overflow-hidden bg-stone-925">
+                            <img src="/images/celebraciones.webp" alt="Cenas VIP" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:hidden"></div>
+                            <h3 class="absolute bottom-4 left-4 right-4 font-serif text-lg text-white md:hidden">Cenas V.I.P.</h3>
+                        </div>
+                        <!-- Back - mobile: flip text, desktop: visible panel -->
+                        <div class="flip-card-back absolute md:relative inset-0 md:w-3/5 bg-stone-925 p-4 md:p-6 flex flex-col justify-center gap-2 md:gap-3">
+                            <h3 class="font-serif text-sm md:text-lg text-gold-400 md:text-white">Cenas V.I.P.</h3>
+                            <p class="text-stone-400 text-[10px] md:text-xs font-light leading-relaxed">Cenas privadas de alta cocina con un menú 100% personalizado por el chef y servicio ultra-exclusivo para momentos inolvidables.</p>
+                            <a href="#contacto" class="text-[10px] md:text-xs font-sans uppercase tracking-widest text-gold-500 hover:text-gold-400 flex items-center gap-2 mt-1">Cotizar Evento <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="flip-card bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-500 h-72 md:h-64 md:flex" tabindex="0" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full md:flex md:flex-row">
+                        <!-- Front -->
+                        <div class="flip-card-front absolute md:relative inset-0 md:w-2/5 overflow-hidden bg-stone-925">
+                            <img src="/images/evento.webp" alt="Eventos especiales" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:hidden"></div>
+                            <h3 class="absolute bottom-4 left-4 right-4 font-serif text-lg text-white md:hidden">Eventos Especiales</h3>
+                        </div>
+                        <!-- Back -->
+                        <div class="flip-card-back absolute md:relative inset-0 md:w-3/5 bg-stone-925 p-4 md:p-6 flex flex-col justify-center gap-2 md:gap-3">
+                            <h3 class="font-serif text-sm md:text-lg text-gold-400 md:text-white">Eventos Especiales</h3>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Bodas boutique, aniversarios y encuentros corporativos de alto perfil en una atmósfera sofisticada y con sabor caribeño.</p>
+                            <a href="#contacto" class="text-xs font-sans uppercase tracking-widest text-gold-500 hover:text-gold-400 flex items-center gap-2 mt-1">Cotizar Evento <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="flip-card bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-500 h-72 md:h-64 md:flex" tabindex="0" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full md:flex md:flex-row">
+                        <!-- Front -->
+                        <div class="flip-card-front absolute md:relative inset-0 md:w-2/5 overflow-hidden bg-stone-925">
+                            <img src="/images/cocina-juan.webp" alt="Cocina en vivo" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:hidden"></div>
+                            <h3 class="absolute bottom-4 left-4 right-4 font-serif text-lg text-white md:hidden">Cocina en Vivo</h3>
+                        </div>
+                        <!-- Back -->
+                        <div class="flip-card-back absolute md:relative inset-0 md:w-3/5 bg-stone-925 p-4 md:p-6 flex flex-col justify-center gap-2 md:gap-3">
+                            <h3 class="font-serif text-sm md:text-lg text-gold-400 md:text-white">Cocina en Vivo</h3>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Experiencias gastronómicas interactivas y pedagógicas lideradas por nuestro Chef Juan Felipe Camacho directamente en tu mesa.</p>
+                            <a href="#contacto" class="text-xs font-sans uppercase tracking-widest text-gold-500 hover:text-gold-400 flex items-center gap-2 mt-1">Cotizar Evento <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Event 4 -->
+                <div class="flip-card bg-stone-925 border border-gold-500/5 hover:border-gold-500/20 transition-all duration-500 h-72 md:h-64 md:flex" tabindex="0" onclick="this.classList.toggle('flipped')">
+                    <div class="flip-card-inner relative w-full h-full md:flex md:flex-row">
+                        <!-- Front -->
+                        <div class="flip-card-front absolute md:relative inset-0 md:w-2/5 overflow-hidden bg-stone-925">
+                            <img src="/images/Don-Juan-Restaurant-Cocteles.webp" alt="Catering premium" class="w-full h-full object-cover" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent md:hidden"></div>
+                            <h3 class="absolute bottom-4 left-4 right-4 font-serif text-lg text-white md:hidden">Catering de Autor</h3>
+                        </div>
+                        <!-- Back -->
+                        <div class="flip-card-back absolute md:relative inset-0 md:w-3/5 bg-stone-925 p-4 md:p-6 flex flex-col justify-center gap-2 md:gap-3">
+                            <h3 class="font-serif text-sm md:text-lg text-gold-400 md:text-white">Catering de Autor</h3>
+                            <p class="text-stone-400 text-xs font-light leading-relaxed">Llevamos el sabor y la impecable experiencia del restaurante Donjuán a tu hogar, villa privada, yate o locación favorita.</p>
+                            <a href="#contacto" class="text-xs font-sans uppercase tracking-widest text-gold-500 hover:text-gold-400 flex items-center gap-2 mt-1">Cotizar Evento <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" /></svg></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Operating Hours Section -->
+    <section id="ubicacion" class="py-24 md:py-32 bg-stone-925 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+                
+                <!-- Info Section -->
+                <div class="lg:col-span-5 flex flex-col gap-8">
+                    <div>
+                        <span class="text-xs uppercase tracking-[0.3em] text-gold-500 block mb-3 font-sans">Encuéntranos</span>
+                        <h2 class="text-3xl md:text-5xl font-serif text-white font-light tracking-wide leading-tight">Ubicación &<br />Horarios</h2>
+                        <div class="w-16 h-[1px] bg-gold-500 mt-6"></div>
+                    </div>
+
+                    <!-- Location Details -->
+                    <div class="flex flex-col gap-6 text-stone-300 font-light">
+                        <div class="flex gap-4 items-start">
+                            <span class="text-gold-500 text-lg mt-1">
+                                <svg class="w-5 h-5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
+                            </span>
+                            <div>
+                                <h4 class="font-serif text-lg text-white mb-1">Dirección</h4>
+                                <p class="text-sm">Av. Carlos Escallón, Cra 8 # 34-01<br />Centro Histórico, Cartagena de Indias, Colombia.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <span class="text-gold-500 text-lg mt-1">
+                                <svg class="w-5 h-5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                            </span>
+                            <div>
+                                <h4 class="font-serif text-lg text-white mb-1">Contacto</h4>
+                                <p class="text-sm">Móvil: +57 (317) 501 14 15<br />Tel: +57 (5) 675 2000</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <span class="text-gold-500 text-lg mt-1">
+                                <svg class="w-5 h-5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                            </span>
+                            <div>
+                                <h4 class="font-serif text-lg text-white mb-1">Horarios de Servicio</h4>
+                                <div class="grid grid-cols-2 gap-x-6 gap-y-1 text-sm mt-2 border-t border-stone-800 pt-2">
+                                    <span class="font-medium text-stone-400">Lunes a Viernes</span>
+                                    <span class="text-right">12:30 - 15:00<br />19:00 - 23:00</span>
+                                    
+                                    <span class="font-medium text-stone-400 border-t border-stone-800/40 mt-1 pt-1">Sábado</span>
+                                    <span class="text-right border-t border-stone-800/40 mt-1 pt-1">19:00 - 23:00</span>
+                                    
+                                    <span class="font-medium text-red-400/80 border-t border-stone-800/40 mt-1 pt-1">Domingo</span>
+                                    <span class="text-right text-red-400/80 border-t border-stone-800/40 mt-1 pt-1">Cerrado</span>
+            </div>
+
+            <!-- Animated Line -->
+            <div class="w-16 h-[1px] bg-gold-500 mx-auto mt-10 animate-fade-in opacity-0" style="animation-delay: 1.5s"></div>
+        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Styled Map Placeholder -->
+                <div class="lg:col-span-7 relative h-[450px] border border-gold-500/10 group overflow-hidden">
+                    <div class="absolute inset-0 bg-stone-900 flex flex-col justify-center items-center text-center p-8 z-0">
+                        <span class="text-gold-500 text-5xl mb-4 animate-bounce">
+                            <svg class="w-12 h-12 text-gold-500 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" /></svg>
+                        </span>
+                        <h4 class="font-serif text-xl text-white mb-2">Centro Histórico de Cartagena</h4>
+                        <p class="text-stone-400 text-xs font-light max-w-sm mb-6 leading-relaxed">Frente al emblemático Portal de los Dulces, a pasos de la Plaza de los Coches.</p>
+                        <a href="https://maps.google.com/?q=Restaurante+Donjuan+Cartagena" target="_blank" rel="noopener" class="px-6 py-3 border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-stone-950 text-xs uppercase tracking-widest font-medium transition-all duration-300">
+                            Abrir en Google Maps
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Exquisite Reservation Form & Contact -->
+    <section id="reservas" class="pt-32 md:pt-44 pb-24 md:pb-32 bg-stone-950 relative overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-gold-500/5 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
+                
+                <!-- Contact Narrative -->
+                <div class="lg:col-span-5 flex flex-col justify-center gap-6">
+                    <span class="text-xs uppercase tracking-[0.3em] text-gold-500 block mb-1 font-sans">Reservas & Consultas</span>
+                    <h2 class="text-3xl md:text-5xl font-serif text-white font-light tracking-wide leading-tight">Asegura tu<br />Experiencia</h2>
+                    <p class="text-stone-400 font-sans text-sm font-light leading-relaxed">
+                        Dado nuestro aforo exclusivo y alta demanda, recomendamos realizar su reserva con anticipación para garantizar una mesa en el horario deseado.
+                    </p>
+                    
+                    <div class="h-[1px] w-32 bg-gold-500/40"></div>
+
+                    <div class="flex flex-col gap-4 text-xs font-sans uppercase tracking-widest text-stone-300">
+                        <p class="flex items-center gap-3"><span class="text-gold-500"><svg class="w-4 h-4 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg></span> +57 (317) 501 1415</p>
+                        <p class="flex items-center gap-3"><span class="text-gold-500"><svg class="w-4 h-4 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></span> reservas@donjuancartagena.com</p>
+                    </div>
+
+                    <a href="https://donjuan.precompro.com/select/" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-3 px-8 py-4 bg-transparent border-2 border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-stone-950 font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300">
+                        Reservar Vía Precompro <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" /></svg>
+                    </a>
+                </div>
+
+                <!-- Reservation Form -->
+                <div id="contacto" class="lg:col-span-7 bg-stone-925 border border-gold-500/10 p-8 md:p-12 relative scroll-mt-32">
+                    <h3 class="font-serif text-2xl text-white font-light tracking-wide mb-8 text-center md:text-left">Formulario de Contacto</h3>
+                    
+                    <form id="reservation-form" class="flex flex-col gap-6">
+                        <!-- Honeypot anti-spam field -->
+                        <div style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+                            <label for="honeypot">No completar este campo</label>
+                            <input type="text" id="honeypot" tabindex="-1" autocomplete="off" />
+                        </div>
+                        
+                        <!-- Row 1 -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label for="name" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans">Nombre Completo *</label>
+                                <input type="text" id="name" required class="bg-stone-950 border border-stone-800 focus:border-gold-500/70 text-white text-sm px-4 py-3 outline-none transition-colors rounded-none font-sans" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="email" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans">Correo Electrónico *</label>
+                                <input type="email" id="email" required class="bg-stone-950 border border-stone-800 focus:border-gold-500/70 text-white text-sm px-4 py-3 outline-none transition-colors rounded-none font-sans" />
+                            </div>
+                        </div>
+
+                        <!-- Row 2 -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex flex-col gap-2">
+                                <label for="phone" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans">Teléfono / WhatsApp *</label>
+                                <input type="tel" id="phone" required class="bg-stone-950 border border-stone-800 focus:border-gold-500/70 text-white text-sm px-4 py-3 outline-none transition-colors rounded-none font-sans" />
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <label for="type" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans">Asunto</label>
+                                <select id="type" class="bg-stone-950 border border-stone-800 focus:border-gold-500/70 text-stone-300 text-sm px-4 py-3 outline-none transition-colors rounded-none font-sans">
+                                    <option value="reserva">Reserva de Mesa Especial</option>
+                                    <option value="evento">Evento Privado / Bodas</option>
+                                    <option value="catering">Servicio de Catering</option>
+                                    <option value="consulta">Consulta General</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Row 3 -->
+                        <div class="flex flex-col gap-2">
+                            <label for="message" class="text-[10px] uppercase tracking-widest text-stone-400 font-sans">Mensaje o Requerimientos Especiales *</label>
+                            <textarea id="message" required rows="4" placeholder="Indíquenos fecha sugerida, número de comensales, alergias o detalles del evento..." class="bg-stone-950 border border-stone-800 focus:border-gold-500/70 text-white text-sm px-4 py-3 outline-none transition-colors rounded-none font-sans resize-none"></textarea>
+                        </div>
+
+                        <!-- Agreement -->
+                        <div class="flex gap-3 items-start mt-2">
+                            <input type="checkbox" id="privacy" required class="mt-1 accent-gold-500" />
+                            <label for="privacy" class="text-[11px] text-stone-400 leading-normal font-sans">
+                                Autorizo el tratamiento de mis datos personales según la <a href="/politica-de-datos" class="text-gold-400 hover:underline">política de privacidad</a>. *
+                            </label>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button type="submit" disabled class="w-full py-4 bg-gold-500 hover:bg-gold-600 text-stone-950 font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 shadow-md disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:bg-gold-500">
+                            Enviar Mensaje
+                        </button>
+                        <div id="form-status" class="hidden mt-4 p-4 border text-sm font-sans leading-relaxed transition-all duration-300 rounded-none" role="alert"></div>
+                    </form>
+
+                    <!-- Form Success Overlay -->
+                    <div id="form-success" class="absolute inset-0 bg-stone-925/98 backdrop-blur-sm z-10 flex flex-col justify-center items-center text-center p-8 hidden animate-fade-in">
+                        <span class="text-gold-500 text-6xl mb-6">
+                            <svg class="w-16 h-16 text-gold-500 mx-auto animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                        </span>
+                        <h4 class="font-serif text-2xl text-white mb-2">¡Mensaje Recibido!</h4>
+                        <p class="text-stone-400 text-sm font-light max-w-sm mb-8 leading-relaxed">Su solicitud ha sido enviada con éxito. Nuestro equipo se contactará con usted a la brevedad posible para confirmar su reserva.</p>
+                        <button id="reset-form-btn" class="px-6 py-3 border border-gold-500 text-gold-400 hover:bg-gold-500 hover:text-stone-950 text-xs uppercase tracking-widest font-medium transition-all duration-300">
+                            Enviar Otro Mensaje
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <Footer lang="es" />
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/+573175011415" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white-pure w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition-transform duration-300 hover:scale-110" aria-label="Escríbenos por WhatsApp">
+        <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    </a>
+
+    <!-- Hero Carousel Styles -->
+    <style>
+        .carousel-slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 1.5s ease-in-out;
+            z-index: 0;
+        }
+        .carousel-slide.active {
+            opacity: 1;
+            z-index: 1;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .flip-card {
+            cursor: pointer;
+        }
+        .flip-card-inner {
+            position: relative;
+        }
+        @media (max-width: 767px) {
+            .flip-card-front {
+                transition: opacity 0.35s ease;
+            }
+            .flip-card-back {
+                opacity: 0;
+                pointer-events: none;
+                transition: opacity 0.35s ease 0.15s;
+            }
+            .flip-card:hover .flip-card-front,
+            .flip-card.flipped .flip-card-front {
+                opacity: 0;
+                pointer-events: none;
+            }
+            .flip-card:hover .flip-card-back,
+            .flip-card.flipped .flip-card-back {
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+    </style>
+
+    <script>
+      import '../scripts/main.js';
+    </script>
+</Layout>

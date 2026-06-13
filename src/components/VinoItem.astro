@@ -1,0 +1,29 @@
+---
+export interface Price {
+  type: string;
+  price: string;
+}
+export interface Props {
+  name: string;
+  origin: string;
+  prices: Price[];
+}
+const { name, origin, prices } = Astro.props;
+function isBottle(type: string): boolean {
+  return type === 'Botella' || type === 'Bottle' || type === 'Btl';
+}
+---
+
+<div class="vino-item">
+  <div class="vino-item-info">
+    <div class="vino-item-name">{name}</div>
+    <div class="vino-item-origin">{origin}</div>
+  </div>
+  <div class="vino-item-prices">
+    {prices.map(p => (
+      <div class={`vino-item-price${isBottle(p.type) ? ' botella' : ''}`}>
+        <span class="label">{p.type}</span>$ {p.price}
+      </div>
+    ))}
+  </div>
+</div>

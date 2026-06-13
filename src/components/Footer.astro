@@ -1,0 +1,135 @@
+---
+export interface Props {
+  lang?: 'es' | 'en';
+}
+
+const { lang = 'es' } = Astro.props;
+
+const prefix = lang === 'en' ? '/en' : '';
+const homePath = prefix || '/';
+
+const t = {
+  es: {
+    description: 'Cocina de autor con alma contemporánea en el corazón del centro histórico de Cartagena de Indias. Desde 2009 creando momentos únicos.',
+    navigation: 'Navegación',
+    navLinks: [
+      { href: `${prefix}/#inicio`, label: 'Home' },
+      { href: `${prefix}/#historia`, label: 'Nuestra Historia' },
+      { href: `${prefix}/menu`, label: 'Carta Digital' },
+      { href: `${prefix}/#galeria`, label: 'Galería de Fotos' },
+      { href: `${prefix}/#eventos`, label: 'Eventos Especiales' },
+    ],
+    services: 'Servicios',
+    svcLinks: [
+      { href: 'https://donjuan.precompro.com/select/', label: 'Reservas Online', external: true },
+      { href: `${prefix}/#eventos`, label: 'Cenas Privadas' },
+      { href: `${prefix}/#eventos`, label: 'Bodas Boutique' },
+      { href: `${prefix}/#eventos`, label: 'Catering' },
+    ],
+    contact: 'Contacto Directo',
+    copyright: '© 2026 Restaurante Donjuán Cartagena. Todos los derechos reservados.',
+    backHome: 'Volver al Inicio',
+    dataPolicy: 'Política de Tratamiento de Datos',
+  },
+  en: {
+    description: 'Author cuisine with a contemporary soul in the heart of Cartagena\'s historic center. Since 2009 creating unique moments.',
+    navigation: 'Navigation',
+    navLinks: [
+      { href: `${prefix}/#inicio`, label: 'Home' },
+      { href: `${prefix}/#historia`, label: 'Our Story' },
+      { href: `${prefix}/menu`, label: 'Digital Menu' },
+      { href: `${prefix}/#galeria`, label: 'Photo Gallery' },
+      { href: `${prefix}/#eventos`, label: 'Special Events' },
+    ],
+    services: 'Services',
+    svcLinks: [
+      { href: 'https://donjuan.precompro.com/select/', label: 'Online Reservations', external: true },
+      { href: `${prefix}/#eventos`, label: 'Private Dining' },
+      { href: `${prefix}/#eventos`, label: 'Boutique Weddings' },
+      { href: `${prefix}/#eventos`, label: 'Catering' },
+    ],
+    contact: 'Direct Contact',
+    copyright: '© 2026 Restaurante Donjuán Cartagena. All rights reserved.',
+    backHome: 'Back to Home',
+    dataPolicy: 'Data Privacy Policy',
+  }
+}[lang];
+---
+
+<footer class="relative overflow-hidden bg-stone-950 border-t border-gold-500/10 pt-16 pb-8 text-gray-300 text-xs bg-fixed bg-cover bg-center" style="background-image: url('/images/footer.webp');">
+  <div class="absolute inset-0 bg-stone-950/80 z-0"></div>
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-12 mb-12">
+      <div class="lg:col-span-4 flex flex-col gap-6">
+        <img src="/images/logo-footer-don-juan-2.webp" alt="Donjuán" class="h-10 w-auto self-start" />
+        <p class="font-sans text-xs font-light leading-relaxed max-w-xs text-gray-300">{t.description}</p>
+        <div class="flex gap-4 text-gray-400">
+          <a href="https://www.instagram.com/donjuancartagena/?hl=es" target="_blank" rel="noopener" class="hover:text-gold-400 transition-colors" aria-label="Instagram">
+            <svg class="w-7 h-7" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.tripadvisor.com/Restaurant_Review-g297476-d1582886-Reviews-Restaurante_Donjuan_Cartagena-Cartagena_Cartagena_District_Bolivar_Department.html" target="_blank" rel="noopener" class="hover:opacity-80 transition-opacity" aria-label="TripAdvisor">
+            <img src="/images/logo_tripadvisor.webp" alt="TripAdvisor" class="w-7 h-7" />
+          </a>
+        </div>
+      </div>
+
+      <div class="lg:col-span-3 flex flex-col gap-4">
+        <h4 class="font-serif text-sm text-gold-400 uppercase tracking-wider">{t.navigation}</h4>
+        <div class="h-[1px] w-12 bg-gold-500/40 mb-2"></div>
+        <ul class="flex flex-col gap-2 font-sans font-light text-gray-300">
+          {t.navLinks.map(link => (
+            <li><a href={link.href} class="hover:text-gold-400 transition-colors">{link.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="lg:col-span-2 flex flex-col gap-4">
+        <h4 class="font-serif text-sm text-gold-400 uppercase tracking-wider">{t.services}</h4>
+        <div class="h-[1px] w-12 bg-gold-500/40 mb-2"></div>
+        <ul class="flex flex-col gap-2 font-sans font-light text-gray-300">
+          {t.svcLinks.map(link => (
+            <li>
+              <a
+                href={link.href}
+                {...(link.external ? { target: '_blank', rel: 'noopener' } : {})}
+                class="hover:text-gold-400 transition-colors"
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div class="lg:col-span-3 flex flex-col gap-4">
+        <h4 class="font-serif text-sm text-gold-400 uppercase tracking-wider">{t.contact}</h4>
+        <div class="h-[1px] w-12 bg-gold-500/40 mb-2"></div>
+        <ul class="flex flex-col gap-3 font-sans font-light text-gray-300">
+          <li class="flex gap-2 items-start">
+            <span class="text-gold-500"><svg class="w-3.5 h-3.5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg></span> +57 (317) 501 14 15
+          </li>
+          <li class="flex gap-2 items-start">
+            <span class="text-gold-500"><svg class="w-3.5 h-3.5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg></span> +57 (5) 675 2000
+          </li>
+          <li class="flex gap-2 items-start">
+            <span class="text-gold-500"><svg class="w-3.5 h-3.5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg></span> reservas@donjuancartagena.com
+          </li>
+          <li class="flex gap-2 items-start">
+            <span class="text-gold-500"><svg class="w-3.5 h-3.5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg></span> Cra 8 # 34-01, Centro Histórico
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="h-[1px] w-full bg-white/10 my-8"></div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-[10px] text-gray-400">
+      <p>{t.copyright}</p>
+      <div class="flex gap-4">
+        <a href="/politica-de-datos" class="hover:text-gold-400 transition-colors">{t.dataPolicy}</a>
+        <span>|</span>
+        <a href="https://louisalonzocely-cpu.github.io/portafolio/#inicio" target="_blank" rel="noopener" class="hover:text-gold-400 transition-colors">Built by luisCelyDev</a>
+      </div>
+    </div>
+  </div>
+</footer>

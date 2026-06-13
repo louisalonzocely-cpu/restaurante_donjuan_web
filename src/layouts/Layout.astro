@@ -1,0 +1,126 @@
+---
+import '../styles/rediseno.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  currentPage?: string;
+  canonical?: string;
+  image?: string;
+  lang?: string;
+}
+
+const siteUrl = 'https://restaurante-donjuan-web.pages.dev';
+const { 
+  title = 'Donjuán Cartagena — Rediseño Exclusivo', 
+  description = 'Rediseño del Restaurante Donjuán en el centro histórico de Cartagena. Cocina de autor con alma contemporánea.', 
+  currentPage = 'index', 
+  canonical = siteUrl, 
+  image = '/images/Don-Juan-Restaurant.webp', 
+  lang = 'es' 
+} = Astro.props;
+
+const siteName = 'Restaurante Donjuán Cartagena';
+const langKeywords: Record<string, string> = {
+  es: 'restaurante cartagena, comida cartagenera, don juan cartagena, restaurante centro histórico, cocina de autor cartagena, menú premium',
+  en: 'restaurant cartagena, cartagena food, don juan cartagena, historic center restaurant, fine dining colombia, premium menu'
+};
+const keywords = langKeywords[lang] || langKeywords.es;
+const locale = lang === 'en' ? 'en_US' : 'es_CO';
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Restaurante Donjuán Cartagena",
+  "image": `${siteUrl}/images/Don-Juan-Restaurant.webp`,
+  "description": description,
+  "url": siteUrl,
+  "telephone": "+57-317-501-1415",
+  "priceRange": "$$$",
+  "servesCuisine": ["Colombiana", "Caribeña", "Mariscos", "Contemporánea"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av Carlos Escallón Cra 8 # 34-01",
+    "addressLocality": "Cartagena de Indias",
+    "addressRegion": "Bolívar",
+    "addressCountry": "CO"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 10.4233,
+    "longitude": -75.5506
+  },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "12:30", "closes": "15:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "19:00", "closes": "23:00" },
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "19:00", "closes": "23:00" }
+  ],
+  "hasMenu": `${siteUrl}/menu`,
+  "acceptsReservations": "true",
+  "sameAs": [
+    "https://www.instagram.com/donjuancartagena/",
+    "https://www.tripadvisor.co/RestaurantReview"
+  ]
+};
+
+const enUrl = canonical.includes('/en') ? canonical : canonical.replace(siteUrl, `${siteUrl}/en`);
+const esUrl = canonical.includes('/en') ? canonical.replace('/en/', '/').replace('/en', '') : canonical;
+---
+
+<!DOCTYPE html>
+<html lang={lang === 'en' ? 'en' : 'es'} class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <meta name="description" content={description}>
+  <meta name="keywords" content={keywords}>
+  <meta name="author" content="Restaurante Donjuán Cartagena">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/logo.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="canonical" href={canonical}>
+  <link rel="alternate" href={esUrl} hreflang="es">
+  <link rel="alternate" href={enUrl} hreflang="en">
+  <link rel="alternate" href={esUrl} hreflang="x-default">
+  <meta name="theme-color" content="#041118">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant.menu">
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:image" content={`${siteUrl}${image}`}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content={siteName}>
+  <meta property="og:locale" content={locale}>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content={title}>
+  <meta name="twitter:description" content={description}>
+  <meta name="twitter:image" content={`${siteUrl}${image}`}>
+
+  <!-- Structured Data (JSON-LD) -->
+  <script type="application/ld+json" set:html={JSON.stringify(structuredData, null, 2)}></script>
+
+  <!-- Google Fonts Connection -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Montserrat:wght@100..900&family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Security Headers (CSP Content-Security-Policy compliant) -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src https://www.google.com https://www.google.com/recaptcha/ https://recaptcha.google.com/; connect-src 'self' https://api.emailjs.com https://www.google.com/recaptcha/;">
+</head>
+<body class="bg-stone-950 text-stone-200 overflow-x-hidden font-sans selection:bg-gold-500 selection:text-stone-950">
+  
+  <slot />
+
+</body>
+</html>

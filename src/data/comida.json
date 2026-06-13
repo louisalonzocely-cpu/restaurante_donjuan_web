@@ -1,0 +1,90 @@
+{
+  "categories": [
+    {
+      "id": "entradas-frias",
+      "title": "Entradas Frias",
+      "items": [
+        { "name": "CEVICHE DE ROBALO", "desc": "leche de coco, cilantro, maiz tostado", "price": "61,000" },
+        { "name": "TATAKI DE RES A LA PARRILLA", "desc": "teriyaki de panela, suero costeno, oliva", "price": "49,000" },
+        { "name": "TIRADITO DE SALMON", "desc": "marinada de soya, lulo, citricos, papas crispy", "price": "53,000" },
+        { "name": "CARPACCIO DE LANGOSTINO", "desc": "limon, aguacate, arroz negro", "price": "61,000" },
+        { "name": "TARTAR DE RES", "desc": "tapioca crujiente, mayonesa de trufa", "price": "53,000" },
+        { "name": "CRUDO DEL DIA", "desc": "aji amarillo, rocoto, pomelo fresco", "price": "51,000" },
+        { "name": "ATUN", "desc": "arroz crocante, alioli de alcachofa, pina picante", "price": "50,000" },
+        { "name": "ENSALADA DE PAPAYA VERDE", "desc": "vinagreta de tamarindo, mani, noodles", "price": "51,000", "veg": true },
+        { "name": "ENSALADA FRESCA", "desc": "tomates, palmitos, cebollas, aguacate, quinoa crujiente", "price": "49,000", "veg": true },
+        { "name": "QUIBBE CRUDO DE SALMON", "desc": "pan de yogur, crema de alcachofas", "price": "53,000" }
+      ]
+    },
+    {
+      "id": "entradas-calientes",
+      "title": "Entradas Calientes",
+      "items": [
+        { "name": "FALAFEL", "desc": "garbanzo y lentejas, crema de berenjena, pan asado", "price": "45,000", "veg": true },
+        { "name": "MEJILLONES NEGROS", "desc": "vino blanco, perejil, cebolla, pan tostado", "price": "75,000" },
+        { "name": "CAMARONES A LA PARRILLA", "desc": "salsa de maracuya, pico de gallo", "price": "55,000" },
+        { "name": "PALMITOS DEL PUTUMAYO A LA BRASA", "desc": "hummus de arvejas, cebolla dulce", "price": "50,000", "veg": true },
+        { "name": "MUELITAS DE CANGREJO", "desc": "mantequilla, ajo, pimienta roja y vino blanco", "price": "89,000" },
+        { "name": "TACOS DE PESCADO", "desc": "cole slaw casera, crujiente de cebolla, queso", "price": "54,000" },
+        { "name": "CANELON DE ASADO DE TIRA", "desc": "polvo de maiz, salsa de quesos", "price": "52,000" },
+        { "name": "RAVIOLIS DE SETAS", "desc": "salsa tres quesos, aceite de oliva, polvo negro", "price": "56,000", "veg": true },
+        { "name": "YAKITORI DE POLLO DE CAMPO", "desc": "limonaria, arracacha", "price": "49,000" },
+        { "name": "COLITA DE LANGOSTA A LA PARRILLA", "desc": "mantequilla, ajo confitado, limon", "price": "79,000" },
+        { "name": "PANCETA", "desc": "tamarindo, hongos, cacao Colombiano", "price": "51,000" },
+        { "name": "PULPO A LA BRASA", "desc": "tocino, papas confitadas, tomates secos y crema agria", "price": "89,000" },
+        { "name": "BERENJENA ASADA", "desc": "bok choy, ragu de tomates, jengibre", "price": "47,000", "veg": true }
+      ]
+    },
+    {
+      "id": "principales",
+      "title": "Platos Principales",
+      "items": [
+        { "name": "ROBALO A LA PARRILLA", "desc": "risotto de limon, parmesano, tomates", "price": "82,000" },
+        { "name": "CORVINA", "desc": "cayeye, salsa de camarones, tomates, leche de coco", "price": "83,000" },
+        { "name": "ROBALO ASADO", "desc": "tabbouleh de cebada, crema de berenjenas", "price": "81,000" },
+        { "name": "ROBALO EN SARTEN", "desc": "refrito de ajos, papas panadera", "price": "80,000" },
+        { "name": "LANGOSTINOS SALTEADOS", "desc": "crema de limon, vegetales, arroz de coco", "price": "94,000" },
+        { "name": "RISOTTO DE LANGOSTINOS", "desc": "tomates frescos, mascarpone, parmesano", "price": "79,000" },
+        { "name": "CURRY DE PESCADO Y CAMARON", "desc": "vegetales, arroz de limonaria, cebollas crujientes", "price": "81,000" },
+        { "name": "RIGATONI", "desc": "salmon, straciatella, pesto de rugula", "price": "79,000" },
+        { "name": "RIBEYE ANGUS BEEF A LA PARRILLA", "desc": "mostaza, tapioca crujiente", "price": "199,000" },
+        { "name": "POLLO BRASA", "desc": "achiote, risotto de vegetales frescos, coliflores fritas", "price": "77,000" },
+        { "name": "CHULETAS DE CORDERO", "desc": "ragu de yuca y hogao, aioli", "price": "127,000" },
+        { "name": "LOMITO WELLINGTON", "desc": "bearnesa, cogollos parrilla y marinada", "price": "91,000" },
+        { "name": "RABO DE TORO AL VINO TINTO", "desc": "pure de papa en 3 cocciones, reduccion", "price": "90,000" },
+        { "name": "OJO DE BIFE A LAS BRASAS", "desc": "boronia, ceviche de palmitos", "price": "149,000" },
+        { "name": "CHULETON DE CERDO A LA BRASA", "desc": "papas caramelizadas, chutney de corozo", "price": "81,000" },
+        { "name": "VACIO DE RES", "desc": "risoni de hongos, pimientos de piquillo, chimichurri", "price": "129,000" },
+        { "name": "COSTILLA 6 HORAS", "desc": "papas rotas, chorizo, zanahorias glaseadas, jengibre", "price": "99,000" },
+        { "name": "RISOTTO DE VEGETALES", "desc": "palmitos, tomates secos, esparragos", "price": "69,000", "veg": true }
+      ]
+    },
+    {
+      "id": "porciones",
+      "title": "Porciones",
+      "items": [
+        { "name": "ESPARRAGOS A LA BRASA", "price": "32,000" },
+        { "name": "TAPIOCA CRUJIENTE Y SUERO", "price": "27,000" },
+        { "name": "CAYEYE", "price": "19,000" },
+        { "name": "ARROZ DE COCO O LIMONARIA", "price": "16,000" },
+        { "name": "PAPAS CASCOS", "price": "19,000" },
+        { "name": "PAPITAS CRIOLLAS", "price": "27,000" },
+        { "name": "RISONI DE HONGOS", "price": "29,000" },
+        { "name": "PORCION DE PAN", "price": "9,000" }
+      ]
+    },
+    {
+      "id": "postres",
+      "title": "Postres",
+      "items": [
+        { "name": "TORTA DE CHOCOLATE COLOMBIANO", "desc": "helada de vainilla, fresas", "price": "34,000" },
+        { "name": "CUBOS DE PIÑA", "desc": "ron, leche de coco, helado de coco, suero", "price": "32,000" },
+        { "name": "BIZCOCHO", "desc": "chocolate blanco, caramelo salado, banano", "price": "34,000" },
+        { "name": "TARTA DE MANZANA Y AREQUIPE", "desc": "helado de vainilla, nube de macadamia", "price": "34,000" },
+        { "name": "LIMON MANDARINO", "desc": "merengue, limoncello, piel de limon", "price": "35,000" },
+        { "name": "GANACHE DE CHOCOLATE 70%", "desc": "inglesa de coco, gel de mora, praline", "price": "33,000" },
+        { "name": "TORRIJAS CASERAS", "desc": "helado de chocolate, almendras", "price": "32,000" }
+      ]
+    }
+  ]
+}
