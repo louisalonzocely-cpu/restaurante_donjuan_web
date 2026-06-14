@@ -100,24 +100,24 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: #7e7e7e;
+  color: #555;
   border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s;
   white-space: nowrap;
   border: 1px solid #e8e0e0;
 }
-.sub-tab:hover { border-color: #9dc9b0; color: #89b59c; }
-.sub-tab.active { background: #9dc9b0; color: #fff; border-color: #9dc9b0; }
+.sub-tab:hover { border-color: #3d7a56; color: #3d7a56; }
+.sub-tab.active { background: #3d7a56; color: #fff; border-color: #3d7a56; }
 .sub-tab .count {
   display: inline-block;
-  background: rgba(0,0,0,0.08);
+  background: rgba(0,0,0,0.12);
   border-radius: 10px;
   padding: 0 8px;
   font-size: 0.7rem;
   margin-left: 5px;
 }
-.sub-tab.active .count { background: rgba(255,255,255,0.25); }
+.sub-tab.active .count { background: rgba(255,255,255,0.2); }
 
 .sub-content { display: none; }
 .sub-content.active { display: block; animation: fadeIn 0.3s ease; }

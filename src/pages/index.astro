@@ -16,13 +16,13 @@ import Footer from '../components/Footer.astro';
             
             <!-- Slides -->
             <div class="carousel-slide active">
-                <img src="/images/banner-home.webp" alt="Plato estrella del Restaurante Donjuán" class="w-full h-full object-cover animate-subtle-zoom" />
+                <img src="/images/banner-home.webp" alt="Plato estrella del Restaurante Donjuán" class="w-full h-full object-cover animate-subtle-zoom" fetchpriority="high" width="1920" height="1080" />
             </div>
             <div class="carousel-slide">
-                <img src="/images/banner-pulpo.webp" alt="Pulpo a la brasa" class="w-full h-full object-cover animate-subtle-zoom" />
+                <img src="/images/banner-pulpo.webp" alt="Pulpo a la brasa" width="1920" height="1080" class="w-full h-full object-cover animate-subtle-zoom" />
             </div>
             <div class="carousel-slide">
-                <img src="/images/robalo-parrilla.webp" alt="Robalo a la parrilla" class="w-full h-full object-cover animate-subtle-zoom" />
+                <img src="/images/robalo-parrilla.webp" alt="Robalo a la parrilla" width="1920" height="1080" class="w-full h-full object-cover animate-subtle-zoom" />
             </div>
 
             <!-- Dots -->
@@ -35,7 +35,7 @@ import Footer from '../components/Footer.astro';
 
         <div class="relative z-10 max-w-5xl mx-auto px-6 text-center pt-36 md:pt-48">
             <!-- Sello decorativo -->
-            <img src="/images/sello-donjuan.webp" alt="Sello Donjuán" class="w-36 md:w-48 mx-auto -mt-8 mb-2 md:mb-3 animate-fade-in opacity-0 brightness-0 invert blur-[0.5px]" style="animation-delay: 0.3s" />
+            <img src="/images/sello-donjuan.webp" alt="Sello Donjuán" width="192" height="64" class="w-36 md:w-48 mx-auto -mt-8 mb-2 md:mb-3 animate-fade-in opacity-0 brightness-0 invert blur-[0.5px]" style="animation-delay: 0.3s" />
 
             <!-- Main Title -->
             <h1 class="text-7xl md:text-[10rem] lg:text-[13rem] font-['Cormorant',serif] text-white-pure font-light tracking-wide mb-6 md:mb-8 animate-slide-up opacity-0" style="animation-delay: 0.6s">
@@ -49,7 +49,7 @@ import Footer from '../components/Footer.astro';
             
             <!-- CTA Buttons -->
             <div class="flex flex-col sm:flex-row gap-4 justify-center items-center animate-slide-up opacity-0" style="animation-delay: 1.2s">
-                <a href="#reservas" class="w-full sm:w-auto px-8 py-4 bg-emerald-500 hover:bg-emerald-600 text-white-pure font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 shadow-lg shadow-emerald-500/10">
+                <a href="#reservas" class="w-full sm:w-auto px-8 py-4 bg-emerald-700 hover:bg-emerald-600 text-white-pure font-sans text-xs uppercase tracking-widest font-bold transition-all duration-300 shadow-lg shadow-emerald-700/10">
                     Reservar Mesa
                 </a>
                 <a href="/menu" class="w-full sm:w-auto px-8 py-4 border border-stone-500 hover:border-gold-400 text-white-pure hover:text-gold-400 font-sans text-xs uppercase tracking-widest font-medium transition-all duration-300 backdrop-blur-sm">
@@ -153,7 +153,7 @@ import Footer from '../components/Footer.astro';
                         <img src="/images/crudo_robalo.webp" alt="Crudo de robalo" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Ceviche de Róbalo</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Ceviche de Róbalo</h3>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$61.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Con deliciosa leche de coco infusionada, cilantro fresco y maíz tostado crujiente del Caribe.</p>
@@ -165,7 +165,7 @@ import Footer from '../components/Footer.astro';
                         <img src="/images/tartar-res.webp" alt="Tartar de Res" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Tartar de Res</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Tartar de Res</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$53.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Acompañado de tapioca crujiente y una mayonesa suave de trufa de la casa.</p>
@@ -178,7 +178,7 @@ import Footer from '../components/Footer.astro';
                         </div>
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Tataki de Res a la Parrilla</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Tataki de Res a la Parrilla</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$49.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Teriyaki artesanal de panela, suero costeño tradicional y aceite de oliva extra virgen.</p>
@@ -191,7 +191,7 @@ import Footer from '../components/Footer.astro';
                         </div>
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Ensalada de Papaya Verde</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Ensalada de Papaya Verde</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$51.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Vinagreta de tamarindo, maní tostado y noodles crujientes. Una explosión de frescura.</p>
@@ -207,7 +207,7 @@ import Footer from '../components/Footer.astro';
                         <img src="/images/robalo-parrilla.webp" alt="Róbalo a la parrilla" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Róbalo a la Parrilla</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Róbalo a la Parrilla</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$82.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Acompañado de un sedoso risotto de limón, queso parmesano y tomates confitados.</p>
@@ -219,7 +219,7 @@ import Footer from '../components/Footer.astro';
                         <img src="/images/banner-pulpo.webp" alt="Pulpo a la brasa" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Pulpo a la Brasa</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Pulpo a la Brasa</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$89.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Con tocino crujiente, papas confitadas, tomates secos y un toque de crema agria de la casa.</p>
@@ -232,8 +232,8 @@ import Footer from '../components/Footer.astro';
                         </div>
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Ribeye Angus Beef</h4>
-                                <span class="font-sans text-golde-400 text-sm font-semibold">$199.000</span>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Ribeye Angus Beef</h4>
+                                <span class="font-sans text-gold-400 text-sm font-semibold">$199.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Corte premium a la parrilla, aderezado con mostaza antigua y de tapioca crujiente.</p>
                         </div>
@@ -245,7 +245,7 @@ import Footer from '../components/Footer.astro';
                         </div>
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Corvina en Cayeye</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Corvina en Cayeye</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$83.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Servida sobre puré de plátano verde (cayeye), salsa cremosa de camarones y leche de coco.</p>
@@ -260,7 +260,7 @@ import Footer from '../components/Footer.astro';
                         <img src="/images/cubos-de-piña.webp" alt="Cubos de piña" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Cubos de Piña al Ron</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Cubos de Piña al Ron</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$32.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Con reducción de ron local, leche de coco, helado artesanal de coco y suero dulce costeño.</p>
@@ -273,7 +273,7 @@ import Footer from '../components/Footer.astro';
                         </div>
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Tarta de Manzana y Arequipe</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Tarta de Manzana y Arequipe</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$34.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Servida tibia, con helado artesanal de vainilla Bourbon y lluvia de nuez de macadamia.</p>
@@ -288,7 +288,7 @@ import Footer from '../components/Footer.astro';
                         <img src="/images/beso-latino.webp" alt="Beso Latino" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Beso Latino</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Beso Latino</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$48.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Cóctel de autor con mezcal Ojo de Tigre premium, arándanos macerados, crema de coco natural y jugo de limón.</p>
@@ -299,7 +299,7 @@ import Footer from '../components/Footer.astro';
                         <img src="/images/Don-Juan-Restaurant-Cocteles.webp" alt="Coctelería de autor" class="w-16 sm:w-24 h-16 sm:h-24 object-cover border border-gold-500/10 group-hover:border-gold-500/35 transition-colors" />
                         <div class="flex-1 text-left">
                             <div class="flex justify-between items-baseline mb-2">
-                                <h4 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Cosmo de Corozo</h4>
+                                <h3 class="font-serif text-lg text-white group-hover:text-gold-400 transition-colors">Cosmo de Corozo</h4>
                                 <span class="font-sans text-gold-400 text-sm font-semibold">$44.000</span>
                             </div>
                             <p class="text-stone-400 text-xs font-light leading-relaxed">Versión caribeña del clásico Cosmopolitan con Vodka, Cointreau, reducción de corozo y limón.</p>
@@ -586,7 +586,7 @@ import Footer from '../components/Footer.astro';
                                 <svg class="w-5 h-5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                             </span>
                             <div>
-                                <h4 class="font-serif text-lg text-white mb-1">Dirección</h4>
+                                <h3 class="font-serif text-lg text-white mb-1">Dirección</h3>
                                 <p class="text-sm">Av. Carlos Escallón, Cra 8 # 34-01<br />Centro Histórico, Cartagena de Indias, Colombia.</p>
                             </div>
                         </div>
@@ -596,7 +596,7 @@ import Footer from '../components/Footer.astro';
                                 <svg class="w-5 h-5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.94.725l.548 2.2a1 1 0 01-.321.988l-1.305.98a10.582 10.582 0 004.872 4.872l.98-1.305a1 1 0 01.988-.321l2.2.548a1 1 0 01.725.94V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                             </span>
                             <div>
-                                <h4 class="font-serif text-lg text-white mb-1">Contacto</h4>
+                                <h3 class="font-serif text-lg text-white mb-1">Contacto</h3>
                                 <p class="text-sm">Móvil: +57 (317) 501 14 15<br />Tel: +57 (5) 675 2000</p>
                             </div>
                         </div>
@@ -606,7 +606,7 @@ import Footer from '../components/Footer.astro';
                                 <svg class="w-5 h-5 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                             </span>
                             <div>
-                                <h4 class="font-serif text-lg text-white mb-1">Horarios de Servicio</h4>
+                                <h3 class="font-serif text-lg text-white mb-1">Horarios de Servicio</h3>
                                 <div class="grid grid-cols-2 gap-x-6 gap-y-1 text-sm mt-2 border-t border-stone-800 pt-2">
                                     <span class="font-medium text-stone-400">Lunes a Viernes</span>
                                     <span class="text-right">12:30 - 15:00<br />19:00 - 23:00</span>
@@ -614,8 +614,8 @@ import Footer from '../components/Footer.astro';
                                     <span class="font-medium text-stone-400 border-t border-stone-800/40 mt-1 pt-1">Sábado</span>
                                     <span class="text-right border-t border-stone-800/40 mt-1 pt-1">19:00 - 23:00</span>
                                     
-                                    <span class="font-medium text-red-400/80 border-t border-stone-800/40 mt-1 pt-1">Domingo</span>
-                                    <span class="text-right text-red-400/80 border-t border-stone-800/40 mt-1 pt-1">Cerrado</span>
+                                    <span class="font-medium text-red-300 border-t border-stone-800/40 mt-1 pt-1">Domingo</span>
+                                    <span class="text-right text-red-300 border-t border-stone-800/40 mt-1 pt-1">Cerrado</span>
             </div>
 
             <!-- Animated Line -->
@@ -751,7 +751,7 @@ import Footer from '../components/Footer.astro';
     <Footer lang="es" />
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/+573175011415" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 bg-emerald-500 hover:bg-emerald-600 text-white-pure w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition-transform duration-300 hover:scale-110" aria-label="Escríbenos por WhatsApp">
+    <a href="https://wa.me/+573175011415" target="_blank" rel="noopener" class="fixed bottom-6 right-6 z-40 bg-emerald-700 hover:bg-emerald-600 text-white-pure w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg transition-transform duration-300 hover:scale-110" aria-label="Escríbenos por WhatsApp">
         <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
     </a>
 

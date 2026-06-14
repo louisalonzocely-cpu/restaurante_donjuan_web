@@ -107,13 +107,17 @@ const esUrl = canonical.includes('/en') ? canonical.replace('/en/', '/').replace
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json" set:html={JSON.stringify(structuredData, null, 2)}></script>
 
+  <!-- Preload Hero Image for LCP -->
+  <link rel="preload" href="/images/banner-home.webp" as="image" fetchpriority="high">
+
   <!-- Google Fonts Connection -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Montserrat:wght@100..900&family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Montserrat:wght@100..900&family=Cabin:wght@400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- FontAwesome Icons (non-render-blocking) -->
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
   
   <!-- Security Headers (CSP Content-Security-Policy compliant) -->
   <meta http-equiv="Content-Security-Policy" content="default-src 'self' https://cdnjs.cloudflare.com; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; img-src 'self' data: https:; frame-src https://www.google.com https://www.google.com/recaptcha/ https://recaptcha.google.com/; connect-src 'self' https://api.emailjs.com https://www.google.com/recaptcha/;">
