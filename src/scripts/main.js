@@ -330,6 +330,7 @@ function initMain() {
         if (successOverlay) successOverlay.classList.remove('hidden');
         if (form) form.reset();
       } catch (e) {
+        console.error('EmailJS error:', e);
         showStatus(msg.error, 'error');
       } finally {
         setSubmitState(false);
