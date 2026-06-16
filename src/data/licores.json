@@ -86,7 +86,7 @@
       "title": "Tequila",
       "items": [
         { "name": "Maestro Dobel Diamante", "price": "65,000", "subprice": "Botella $ 820,000" },
-        { "name": "1800 Reserva Anejo", "price": "50,000", "subprice": "Botella $ 660,000" },
+        { "name": "1800 Reserva Añejo", "price": "50,000", "subprice": "Botella $ 660,000" },
         { "name": "Altos Plata", "price": "42,000", "subprice": "Botella $ 520,000" },
         { "name": "Altos Reposado", "price": "42,000", "subprice": "Botella $ 520,000" },
         { "name": "Don Julio Reposado", "price": "58,000", "subprice": "Botella $ 740,000" },
@@ -126,8 +126,8 @@
             { "name": "Pisco Demonio de los Andes", "price": "33,000", "subprice": "Botella $ 400,000" },
             { "name": "Pisco Huamani", "price": "38,000", "subprice": "Botella $ 470,000" },
             { "name": "Aguardiente Amarillo", "price": "25,000", "subprice": "Botella $ 260,000" },
-            { "name": "Aguardiente Antioqueno", "price": "25,000", "subprice": "Botella $ 260,000" },
-            { "name": "Aguardiente Antioqueno 375 ml", "price": "", "subprice": "Botella $ 160,000" },
+            { "name": "Aguardiente Antioqueño", "price": "25,000", "subprice": "Botella $ 260,000" },
+            { "name": "Aguardiente Antioqueño 375 ml", "price": "", "subprice": "Botella $ 160,000" },
             { "name": "Viche Mano de Buey 750 ml", "price": "33,000", "subprice": "Botella $ 380,000" }
           ]
         },
