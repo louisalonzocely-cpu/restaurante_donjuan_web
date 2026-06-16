@@ -6,5 +6,5 @@ export default defineConfig({
   output: 'static',
   site: 'https://restaurante-donjuan-web.pages.dev',
   devToolbar: {enabled: false},
-  integrations: [sitemap(), tailwind()],
+  integrations: [sitemap({ lastmod: new Date('2026-06-16') }), tailwind()],
 });

@@ -58,6 +58,18 @@ function initMain() {
     });
   });
 
+  const logo = document.querySelector('#main-header a[href="/"], #main-header a[href="/en"]');
+  if (logo) {
+    logo.addEventListener('click', (e) => {
+      if (window.location.pathname === '/' || window.location.pathname === '/en/') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        header.classList.remove('bg-stone-950/90', 'backdrop-blur-md', 'py-4', 'border-b', 'border-gold-500/10');
+        header.classList.add('bg-transparent', 'py-6');
+      }
+    });
+  }
+
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const closeDrawerBtn = document.getElementById('close-drawer-btn');
   const mobileDrawer = document.getElementById('mobile-drawer');
@@ -435,6 +447,25 @@ function initMain() {
   }
 
   startAutoPlay();
+
+  const popupOverlay = document.getElementById('popup-overlay');
+  const popupCard = document.getElementById('popup-card');
+  const popupClose = document.getElementById('popup-close');
+  const popupCloseBtn = document.getElementById('popup-close-btn');
+
+  function closePopup() {
+    if (!popupOverlay || !popupCard) return;
+    popupOverlay.style.opacity = '0';
+    popupOverlay.style.pointerEvents = 'none';
+    popupCard.classList.remove('scale-100');
+    popupCard.classList.add('scale-95');
+  }
+
+  if (popupClose) popupClose.addEventListener('click', closePopup);
+  if (popupCloseBtn) popupCloseBtn.addEventListener('click', closePopup);
+  if (popupOverlay) popupOverlay.addEventListener('click', (e) => {
+    if (e.target === popupOverlay) closePopup();
+  });
 }
 
 if (document.readyState === 'loading') {

@@ -33,7 +33,7 @@ export default {
         },
         emerald: {
           400: '#7fb89a',
-          500: '#5a9a75', // Brand Green
+          500: '#78bf96', // Brand Green
         }
       },
       fontFamily: {

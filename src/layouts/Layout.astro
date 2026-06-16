@@ -12,8 +12,8 @@ export interface Props {
 
 const siteUrl = 'https://restaurante-donjuan-web.pages.dev';
 const { 
-  title = 'Donjuán Cartagena — Rediseño Exclusivo', 
-  description = 'Rediseño del Restaurante Donjuán en el centro histórico de Cartagena. Cocina de autor con alma contemporánea.', 
+  title = 'Restaurante Donjuán | Cocina de Autor en Cartagena de Indias', 
+  description = 'Cocina de autor con alma contemporánea en el centro histórico de Cartagena. Ingredientes del Caribe colombiano, chef Juan Felipe Camacho. Reserva tu mesa.', 
   currentPage = 'index', 
   canonical = siteUrl, 
   image = '/images/Don-Juan-Restaurant.webp', 
@@ -56,15 +56,24 @@ const structuredData = {
     { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "19:00", "closes": "23:00" }
   ],
   "hasMenu": `${siteUrl}/menu`,
-  "acceptsReservations": "true",
+  "acceptsReservations": "https://donjuan.precompro.com/select/",
   "sameAs": [
     "https://www.instagram.com/donjuancartagena/",
     "https://www.tripadvisor.co/RestaurantReview"
   ]
 };
 
-const enUrl = canonical.includes('/en') ? canonical : canonical.replace(siteUrl, `${siteUrl}/en`);
-const esUrl = canonical.includes('/en') ? canonical.replace('/en/', '/').replace('/en', '') : canonical;
+function cleanUrl(url) {
+  const parts = url.split('://');
+  if (parts.length === 2) {
+    const path = parts[1].replace(/\/{2,}/g, '/').replace(/\/?$/, '/');
+    return `${parts[0]}://${path}`;
+  }
+  return url.replace(/\/{2,}/g, '/').replace(/\/?$/, '/');
+}
+
+const enUrl = cleanUrl(canonical.includes('/en') ? canonical : canonical.replace(siteUrl, `${siteUrl}/en`));
+const esUrl = cleanUrl(canonical.includes('/en') ? canonical.replace('/en/', '/').replace('/en', '') : canonical);
 ---
 
 <!DOCTYPE html>
@@ -88,7 +97,7 @@ const esUrl = canonical.includes('/en') ? canonical.replace('/en/', '/').replace
   <meta name="theme-color" content="#041118">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="restaurant.menu">
+  <meta property="og:type" content="website">
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:url" content={canonical}>
@@ -103,6 +112,7 @@ const esUrl = canonical.includes('/en') ? canonical.replace('/en/', '/').replace
   <meta name="twitter:title" content={title}>
   <meta name="twitter:description" content={description}>
   <meta name="twitter:image" content={`${siteUrl}${image}`}>
+  <meta name="twitter:site" content="@donjuancartagena">
 
   <!-- Structured Data (JSON-LD) -->
   <script type="application/ld+json" set:html={JSON.stringify(structuredData, null, 2)}></script>
