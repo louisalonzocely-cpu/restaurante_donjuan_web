@@ -380,27 +380,53 @@ function initMain() {
       setSubmitState(true);
 
       try {
-        const response = await fetch('/submit-form', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            name: cleanName,
-            email: cleanEmail,
-            phone: cleanPhone,
-            subject: subjectLabel,
-            message: cleanMessage,
-            lang: lang
-          })
-        });
+        let ok = false;
 
-        if (response.ok) {
+        try {
+          const workerResponse = await fetch('/submit-form', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: cleanName,
+              email: cleanEmail,
+              phone: cleanPhone,
+              subject: subjectLabel,
+              message: cleanMessage,
+              lang: lang
+            })
+          });
+          ok = workerResponse.ok;
+        } catch {
+          // Worker not available (local dev) — fall through to direct API
+        }
+
+        if (!ok) {
+          const directResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              service_id: import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
+              template_id: import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
+              user_id: import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY,
+              template_params: {
+                name: cleanName,
+                email: cleanEmail,
+                phone: cleanPhone,
+                subject: subjectLabel,
+                message: cleanMessage,
+                lang: lang
+              }
+            })
+          });
+          ok = directResponse.ok;
+        }
+
+        if (ok) {
           recordSubmission();
           showStatus(msg.success.replace('{name}', cleanName), 'success');
           if (successOverlay) successOverlay.classList.remove('hidden');
           if (form) form.reset();
         } else {
-          const err = await response.json();
-          console.error('Submit error:', err);
           showStatus(msg.error, 'error');
         }
       } catch (e) {
