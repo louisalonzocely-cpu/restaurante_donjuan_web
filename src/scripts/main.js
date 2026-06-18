@@ -4,8 +4,10 @@ function initMain() {
   const lang = document.documentElement.lang || 'es';
 
   const msg = lang === 'en' ? {
-    cooldown: 'For security, please wait 1 minute before sending another message.',
+    cooldown: 'For security, please wait {seconds} seconds before sending another message.',
     tooFast: 'The form was submitted too quickly. Please wait a few seconds.',
+    hourlyLimit: 'You have reached the maximum number of messages per hour. Please try again later.',
+    dailyLimit: 'You have reached the maximum number of messages for today. Please contact us by phone.',
     nameLong: 'The name is too long (maximum 80 characters).',
     phoneLong: 'The phone number is too long (maximum 20 characters).',
     msgLong: 'The message is too long (maximum 1000 characters).',
@@ -22,8 +24,10 @@ function initMain() {
       consulta: 'General Inquiry'
     }
   } : {
-    cooldown: 'Por seguridad, por favor espera 1 minuto antes de enviar otro mensaje.',
+    cooldown: 'Por seguridad, por favor espera {seconds} segundos antes de enviar otro mensaje.',
     tooFast: 'El formulario se ha enviado demasiado rápido. Por favor, espera unos segundos.',
+    hourlyLimit: 'Has alcanzado el máximo de mensajes por hora. Intenta de nuevo más tarde.',
+    dailyLimit: 'Has alcanzado el máximo de mensajes para hoy. Contáctanos por teléfono.',
     nameLong: 'El nombre es demasiado largo (máximo 80 caracteres).',
     phoneLong: 'El teléfono es demasiado largo (máximo 20 caracteres).',
     msgLong: 'El mensaje es demasiado largo (máximo 1000 caracteres).',
@@ -121,6 +125,8 @@ function initMain() {
     'Highly professional and impeccable service',
     'Artisanal cocktails and signature drinks at our bar',
     'Artisanal fishing and fresh local seafood',
+    'Our talented kitchen and service team',
+    'View of Restaurante Donjuán',
     'Elegant celebrations and boutique weddings in the historic center',
     'Private VIP dinners and exclusive signature catering'
   ] : [
@@ -128,6 +134,8 @@ function initMain() {
     'Servicio altamente profesional e impecable',
     'Coctelería artesanal y cócteles de autor en nuestra barra',
     'Pesca artesanal y frescos mariscos locales',
+    'Nuestro talentoso equipo de cocina',
+    'Vista del Restaurante Donjuán',
     'Celebraciones elegantes y bodas boutique en el centro histórico',
     'Cenas privadas VIP y catering exclusivo de autor'
   ];
@@ -137,8 +145,10 @@ function initMain() {
     { src: '/images/Don-Juan-Servicio.webp', caption: galleryCaptions[1] },
     { src: '/images/Don-Juan-Restaurant-Cocteles.webp', caption: galleryCaptions[2] },
     { src: '/images/banner-pulpo.webp', caption: galleryCaptions[3] },
-    { src: '/images/celebraciones.webp', caption: galleryCaptions[4] },
-    { src: '/images/evento.webp', caption: galleryCaptions[5] }
+    { src: '/images/equipo-donjuan.webp', caption: galleryCaptions[4] },
+    { src: '/images/restaurante.webp', caption: galleryCaptions[5] },
+    { src: '/images/celebraciones.webp', caption: galleryCaptions[6] },
+    { src: '/images/evento.webp', caption: galleryCaptions[7] }
   ];
 
   let currentImgIndex = 0;
@@ -241,6 +251,58 @@ function initMain() {
     return msg.selectLabels[value] || value;
   }
 
+  const RATE_LIMIT = {
+    COOLDOWN_MS: 120000,
+    MAX_PER_HOUR: 3,
+    MAX_PER_DAY: 10,
+    HOUR_MS: 3600000,
+    DAY_MS: 86400000
+  };
+
+  function getStoredTimestamps() {
+    try {
+      return JSON.parse(localStorage.getItem('form_submit_timestamps') || '[]');
+    } catch {
+      return [];
+    }
+  }
+
+  function checkRateLimit() {
+    const now = Date.now();
+    const timestamps = getStoredTimestamps();
+    const recent = timestamps.filter(t => now - t < RATE_LIMIT.DAY_MS);
+
+    if (recent.length > 0) {
+      const elapsed = now - recent[recent.length - 1];
+      if (elapsed < RATE_LIMIT.COOLDOWN_MS) {
+        const seconds = Math.ceil((RATE_LIMIT.COOLDOWN_MS - elapsed) / 1000);
+        return { allowed: false, message: msg.cooldown.replace('{seconds}', seconds) };
+      }
+    }
+
+    const lastHour = recent.filter(t => now - t < RATE_LIMIT.HOUR_MS);
+    if (lastHour.length >= RATE_LIMIT.MAX_PER_HOUR) {
+      return { allowed: false, message: msg.hourlyLimit };
+    }
+
+    if (recent.length >= RATE_LIMIT.MAX_PER_DAY) {
+      return { allowed: false, message: msg.dailyLimit };
+    }
+
+    return { allowed: true };
+  }
+
+  function recordSubmission() {
+    const cutoff = Date.now() - RATE_LIMIT.DAY_MS;
+    const timestamps = getStoredTimestamps().filter(t => t > cutoff);
+    timestamps.push(Date.now());
+    try {
+      localStorage.setItem('form_submit_timestamps', JSON.stringify(timestamps));
+    } catch {
+      // localStorage full or unavailable — submission still proceeds
+    }
+  }
+
   function setSubmitState(loading) {
     submissionInProgress = loading;
     if (!submitBtn) return;
@@ -281,10 +343,9 @@ function initMain() {
       const honeypot = document.getElementById('honeypot');
       if (honeypot && honeypot.value !== '') return;
 
-      const COOLDOWN_MS = 60000;
-      const lastSubmit = localStorage.getItem('form_last_submit');
-      if (lastSubmit && (Date.now() - parseInt(lastSubmit)) < COOLDOWN_MS) {
-        showStatus(msg.cooldown, 'error');
+      const rateLimit = checkRateLimit();
+      if (!rateLimit.allowed) {
+        showStatus(rateLimit.message, 'error');
         return;
       }
 
@@ -337,7 +398,7 @@ function initMain() {
           }
         );
 
-        localStorage.setItem('form_last_submit', Date.now().toString());
+        recordSubmission();
         showStatus(msg.success.replace('{name}', cleanName), 'success');
         if (successOverlay) successOverlay.classList.remove('hidden');
         if (form) form.reset();
@@ -447,6 +508,16 @@ function initMain() {
   }
 
   startAutoPlay();
+
+  window.openLightbox = openLightbox;
+
+  window.showMoreGallery = function () {
+    const hiddenItems = document.querySelectorAll('.gallery-item.gallery-hidden');
+    if (hiddenItems.length > 0) {
+      const index = parseInt(hiddenItems[0].getAttribute('data-index'));
+      if (!isNaN(index)) openLightbox(index);
+    }
+  };
 
   const popupOverlay = document.getElementById('popup-overlay');
   const popupCard = document.getElementById('popup-card');
