@@ -1,5 +1,3 @@
-import emailjs from '@emailjs/browser';
-
 function initMain() {
   const lang = document.documentElement.lang || 'es';
 
@@ -382,28 +380,31 @@ function initMain() {
       setSubmitState(true);
 
       try {
-        await emailjs.send(
-          import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
-          import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
-          {
+        const response = await fetch('/submit-form', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
             name: cleanName,
             email: cleanEmail,
             phone: cleanPhone,
             subject: subjectLabel,
             message: cleanMessage,
             lang: lang
-          },
-          {
-            publicKey: import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY
-          }
-        );
+          })
+        });
 
-        recordSubmission();
-        showStatus(msg.success.replace('{name}', cleanName), 'success');
-        if (successOverlay) successOverlay.classList.remove('hidden');
-        if (form) form.reset();
+        if (response.ok) {
+          recordSubmission();
+          showStatus(msg.success.replace('{name}', cleanName), 'success');
+          if (successOverlay) successOverlay.classList.remove('hidden');
+          if (form) form.reset();
+        } else {
+          const err = await response.json();
+          console.error('Submit error:', err);
+          showStatus(msg.error, 'error');
+        }
       } catch (e) {
-        console.error('EmailJS error:', e);
+        console.error('Submit error:', e);
         showStatus(msg.error, 'error');
       } finally {
         setSubmitState(false);
