@@ -12,7 +12,7 @@ export interface Props {
 
 const siteUrl = 'https://restaurante-donjuan-web.pages.dev';
 const { 
-  title = 'Restaurante Donjuán | Cocina de Autor en Cartagena de Indias', 
+  title = 'Restaurante donjuan | Cocina de Autor en Cartagena de Indias', 
   description = 'Cocina de autor con alma contemporánea en el centro histórico de Cartagena. Ingredientes del Caribe colombiano, chef Juan Felipe Camacho. Reserva tu mesa.', 
   currentPage = 'index', 
   canonical = siteUrl, 
@@ -20,7 +20,7 @@ const {
   lang = 'es' 
 } = Astro.props;
 
-const siteName = 'Restaurante Donjuán Cartagena';
+const siteName = 'Restaurante donjuan Cartagena';
 const langKeywords: Record<string, string> = {
   es: 'restaurante cartagena, comida cartagenera, don juan cartagena, restaurante centro histórico, cocina de autor cartagena, menú premium',
   en: 'restaurant cartagena, cartagena food, don juan cartagena, historic center restaurant, fine dining colombia, premium menu'
@@ -31,7 +31,7 @@ const locale = lang === 'en' ? 'en_US' : 'es_CO';
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  "name": "Restaurante Donjuán Cartagena",
+  "name": "Restaurante donjuan Cartagena",
   "image": `${siteUrl}/images/Don-Juan-Restaurant.webp`,
   "description": description,
   "url": siteUrl,
@@ -84,7 +84,7 @@ const esUrl = cleanUrl(canonical.includes('/en') ? canonical.replace('/en/', '/'
   <title>{title}</title>
   <meta name="description" content={description}>
   <meta name="keywords" content={keywords}>
-  <meta name="author" content="Restaurante Donjuán Cartagena">
+  <meta name="author" content="Restaurante donjuan Cartagena">
   <meta name="robots" content="index, follow">
   <link rel="icon" type="image/png" href="/images/logo.png">
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
