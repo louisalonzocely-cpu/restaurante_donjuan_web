@@ -48,11 +48,11 @@ function initMain() {
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      header.classList.remove('bg-transparent', 'py-6');
-      header.classList.add('bg-stone-950/90', 'backdrop-blur-md', 'py-4', 'border-b', 'border-gold-500/10');
+      header.classList.remove('bg-transparent', 'py-6', 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]');
+      header.classList.add('bg-stone-950', 'py-4');
     } else {
-      header.classList.remove('bg-stone-950/90', 'backdrop-blur-md', 'py-4', 'border-b', 'border-gold-500/10');
-      header.classList.add('bg-transparent', 'py-6');
+      header.classList.remove('bg-stone-950', 'py-4');
+      header.classList.add('bg-transparent', 'py-6', 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]');
     }
     const heroOffset = window.scrollY * 0.4;
     heroSlides.forEach(slide => {
@@ -66,8 +66,8 @@ function initMain() {
       if (window.location.pathname === '/' || window.location.pathname === '/en/') {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        header.classList.remove('bg-stone-950/90', 'backdrop-blur-md', 'py-4', 'border-b', 'border-gold-500/10');
-        header.classList.add('bg-transparent', 'py-6');
+        header.classList.remove('bg-stone-950', 'py-4');
+        header.classList.add('bg-transparent', 'py-6', 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]');
       }
     });
   }
@@ -212,6 +212,22 @@ function initMain() {
     if (e.key === 'ArrowRight') nextImage();
     if (e.key === 'ArrowLeft') prevImage();
   });
+
+  const backToTop = document.getElementById('back-to-top');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.remove('opacity-0', 'pointer-events-none');
+        backToTop.classList.add('opacity-100');
+      } else {
+        backToTop.classList.remove('opacity-100');
+        backToTop.classList.add('opacity-0', 'pointer-events-none');
+      }
+    });
+    backToTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 
   const form = document.getElementById('reservation-form');
   const successOverlay = document.getElementById('form-success');

@@ -32,9 +32,13 @@ export default {
           950: '#05141c', // Brand Absolute Body Background (dark mode tinted signature blue)
         },
         emerald: {
-          400: '#7fb89a',
-          500: '#78bf96', // Brand Green
-        }
+           400: '#7fb89a',
+           500: '#78bf96', // Brand Green
+         },
+         whatsapp: {
+           DEFAULT: '#25D366',
+           hover: '#20BD5C',
+         }
       },
       fontFamily: {
         serif: ['"Playfair Display"', 'serif'],

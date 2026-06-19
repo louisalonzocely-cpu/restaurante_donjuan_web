@@ -4,11 +4,11 @@ function initMenu() {
   if (header) {
     function updateHeader() {
       if (window.scrollY > 80) {
-        header.classList.remove('bg-transparent', 'py-6');
-        header.classList.add('bg-stone-950/90', 'backdrop-blur-md', 'py-4', 'border-b', 'border-gold-500/10');
+        header.classList.remove('bg-transparent', 'py-6', 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]');
+        header.classList.add('bg-stone-950', 'py-4');
       } else {
-        header.classList.remove('bg-stone-950/90', 'backdrop-blur-md', 'py-4', 'border-b', 'border-gold-500/10');
-        header.classList.add('bg-transparent', 'py-6');
+        header.classList.remove('bg-stone-950', 'py-4');
+        header.classList.add('bg-transparent', 'py-6', 'drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]');
       }
     }
     window.addEventListener('scroll', updateHeader);

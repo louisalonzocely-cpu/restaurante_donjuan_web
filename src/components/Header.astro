@@ -53,9 +53,9 @@ const otherHomePath = otherPrefix || '/';
 <header
   id="main-header"
   class="fixed top-0 left-0 w-full z-50 transition-all duration-500
-    {hasTransparentHeader ? 'bg-transparent py-6 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]' : 'bg-stone-950/90 backdrop-blur-md py-4 border-b border-gold-500/10 text-white'"
+    {hasTransparentHeader ? 'bg-transparent py-6 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]' : 'bg-stone-950 py-4 text-white'"
 >
-  <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center">
     <a href={prefix || '/'} class="flex items-center gap-3 group relative">
       <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-gold-400 via-amber-300 to-gold-500 opacity-40 animate-pulse blur-[2px]"></div>
       <div class="absolute -inset-1 rounded-full bg-gradient-to-r from-gold-500 via-amber-400 to-gold-500 opacity-0 group-hover:opacity-70 transition-opacity duration-500 blur-[3px]"></div>
@@ -64,7 +64,7 @@ const otherHomePath = otherPrefix || '/';
       </div>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-8 font-sans text-xs uppercase tracking-widest text-inherit">
+    <nav class="hidden lg:flex items-center gap-8 font-sans text-xs uppercase tracking-widest text-inherit ml-auto">
       {navLinks.map((link) => (
         <a
           href={link.href}
@@ -82,7 +82,7 @@ const otherHomePath = otherPrefix || '/';
       ))}
     </nav>
 
-    <div class="hidden lg:flex items-center gap-6">
+    <div class="hidden lg:flex items-center gap-6 ml-8">
       <a
         href={ctaHref}
         class="px-6 py-3 border border-gold-500/55 hover:border-gold-400 bg-gold-500/10 hover:bg-gold-500 text-gold-400 hover:text-stone-950 font-sans text-xs uppercase tracking-widest rounded-none transition-all duration-350"
