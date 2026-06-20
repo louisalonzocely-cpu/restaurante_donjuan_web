@@ -1,6 +1,6 @@
 {
-  "name": "Restaurante Donjuán Cartagena",
-  "short_name": "Donjuán",
+  "name": "Restaurante donjuan Cartagena",
+  "short_name": "donjuan",
   "description": "Restaurante de cocina de autor en el centro histórico de Cartagena.",
   "start_url": "/",
   "display": "standalone",

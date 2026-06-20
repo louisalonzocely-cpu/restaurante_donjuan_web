@@ -119,21 +119,21 @@ function initMain() {
   });
 
   const galleryCaptions = lang === 'en' ? [
-    'Sophisticated atmosphere of Restaurante Donjuán',
+    'Sophisticated atmosphere of Restaurante donjuan',
     'Highly professional and impeccable service',
     'Artisanal cocktails and signature drinks at our bar',
     'Artisanal fishing and fresh local seafood',
     'Our talented kitchen and service team',
-    'View of Restaurante Donjuán',
+    'View of Restaurante donjuan',
     'Elegant celebrations and boutique weddings in the historic center',
     'Private VIP dinners and exclusive signature catering'
   ] : [
-    'Atmósfera sofisticada del Restaurante Donjuán',
+    'Atmósfera sofisticada del Restaurante donjuan',
     'Servicio altamente profesional e impecable',
     'Coctelería artesanal y cócteles de autor en nuestra barra',
     'Pesca artesanal y frescos mariscos locales',
     'Nuestro talentoso equipo de cocina',
-    'Vista del Restaurante Donjuán',
+    'Vista del Restaurante donjuan',
     'Celebraciones elegantes y bodas boutique en el centro histórico',
     'Cenas privadas VIP y catering exclusivo de autor'
   ];
