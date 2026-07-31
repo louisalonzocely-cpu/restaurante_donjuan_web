@@ -324,6 +324,23 @@ function initMain() {
     submitBtn.textContent = loading ? msg.sending : (submitBtn.getAttribute('data-original-text') || submitBtn.textContent);
   }
 
+  async function notifySlack(payload) {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      if (res.ok) {
+        console.log('Slack notification sent');
+      } else {
+        console.warn('Slack notification failed:', res.status, await res.text().catch(() => ''));
+      }
+    } catch (e) {
+      console.error('Slack notify error:', e);
+    }
+  }
+
   if (form && submitBtn) {
     submitBtn.setAttribute('data-original-text', submitBtn.textContent);
 
@@ -417,25 +434,9 @@ function initMain() {
         if (directResponse.ok) {
           recordSubmission();
           showStatus(msg.success.replace('{name}', cleanName), 'success');
-          try {
-            await fetch('/api/contact', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({
-                name: cleanName,
-                email: cleanEmail,
-                phone: cleanPhone,
-                subject: subjectLabel,
-                message: cleanMessage,
-                lang: lang,
-                honeypot: honeypot ? honeypot.value : ''
-              })
-            });
-          } catch (e) {
-            console.error('Slack notify error:', e);
-          }
           if (successOverlay) successOverlay.classList.remove('hidden');
           if (form) form.reset();
+          notifySlack({ name: cleanName, email: cleanEmail, phone: cleanPhone, subject: subjectLabel, message: cleanMessage, lang, honeypot: honeypot ? honeypot.value : '' });
         } else {
           showStatus(msg.error, 'error');
         }
