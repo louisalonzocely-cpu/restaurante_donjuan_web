@@ -854,8 +854,6 @@ import Footer from '../../components/Footer.astro';
 
     </style>
 
-    <!-- Test popup -->
-
     <style is:global>
         .whatsapp-btn {
             animation: whatsapp-glow 2s ease-in-out infinite;
@@ -869,14 +867,6 @@ import Footer from '../../components/Footer.astro';
             }
         }
     </style>
-    <div id="popup-overlay" class="fixed inset-0 z-[9999] flex items-center justify-center bg-black/60 transition-opacity duration-300" style="opacity: 0; pointer-events: none;">
-        <div class="bg-stone-900 border border-gold-500/20 max-w-md w-full mx-4 p-8 relative rounded-lg shadow-2xl transition-transform duration-300 scale-100" id="popup-card">
-            <button id="popup-close" class="absolute top-3 right-4 text-stone-400 hover:text-white text-3xl leading-none">&times;</button>
-            <h3 class="font-serif text-2xl text-white mb-2">We improve your site!</h3>
-            <p class="text-stone-400 text-sm leading-relaxed mb-6">This is a test popup. We can use it for promotions, announcements, or whatever you need.</p>
-            <button id="popup-close-btn" class="bg-gold-500 text-stone-950 px-6 py-2 rounded text-sm uppercase tracking-widest font-semibold hover:bg-gold-400 transition-colors">Close</button>
-        </div>
-    </div>
 
     <script>
       import '../../scripts/main.js';

@@ -396,50 +396,44 @@ function initMain() {
       setSubmitState(true);
 
       try {
-        let ok = false;
-
-        try {
-          const workerResponse = await fetch('/submit-form', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
+        const directResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            service_id: import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
+            template_id: import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
+            user_id: import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY,
+            template_params: {
               name: cleanName,
               email: cleanEmail,
               phone: cleanPhone,
               subject: subjectLabel,
               message: cleanMessage,
               lang: lang
-            })
-          });
-          ok = workerResponse.ok;
-        } catch {
-          // Worker not available (local dev) — fall through to direct API
-        }
+            }
+          })
+        });
 
-        if (!ok) {
-          const directResponse = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              service_id: import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,
-              template_id: import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID,
-              user_id: import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY,
-              template_params: {
+        if (directResponse.ok) {
+          recordSubmission();
+          showStatus(msg.success.replace('{name}', cleanName), 'success');
+          try {
+            await fetch('/api/contact', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
                 name: cleanName,
                 email: cleanEmail,
                 phone: cleanPhone,
                 subject: subjectLabel,
                 message: cleanMessage,
-                lang: lang
-              }
-            })
-          });
-          ok = directResponse.ok;
-        }
-
-        if (ok) {
-          recordSubmission();
-          showStatus(msg.success.replace('{name}', cleanName), 'success');
+                lang: lang,
+                honeypot: honeypot ? honeypot.value : ''
+              })
+            });
+          } catch (e) {
+            console.error('Slack notify error:', e);
+          }
           if (successOverlay) successOverlay.classList.remove('hidden');
           if (form) form.reset();
         } else {
@@ -562,24 +556,7 @@ function initMain() {
     }
   };
 
-  const popupOverlay = document.getElementById('popup-overlay');
-  const popupCard = document.getElementById('popup-card');
-  const popupClose = document.getElementById('popup-close');
-  const popupCloseBtn = document.getElementById('popup-close-btn');
-
-  function closePopup() {
-    if (!popupOverlay || !popupCard) return;
-    popupOverlay.style.opacity = '0';
-    popupOverlay.style.pointerEvents = 'none';
-    popupCard.classList.remove('scale-100');
-    popupCard.classList.add('scale-95');
-  }
-
-  if (popupClose) popupClose.addEventListener('click', closePopup);
-  if (popupCloseBtn) popupCloseBtn.addEventListener('click', closePopup);
-  if (popupOverlay) popupOverlay.addEventListener('click', (e) => {
-    if (e.target === popupOverlay) closePopup();
-  });
+  
 }
 
 if (document.readyState === 'loading') {
