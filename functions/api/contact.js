@@ -66,7 +66,7 @@ export async function onRequest(context) {
       {
         type: 'context',
         elements: [
-          { type: 'mrkdwn', text: `Idioma: ${lang === 'en' ? 'English' : 'Espanol'} - Enviado desde la web donjuancartagena.com` }
+          { type: 'mrkdwn', text: `Idioma: ${lang === 'en' ? 'English' : 'Espanol'} - Enviado desde la web <https://restaurante-donjuan-web.pages.dev/#inicio|restaurante-donjuan-web.pages.dev>` }
         ]
       }
     ]
